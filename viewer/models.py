@@ -22,6 +22,17 @@ class Level(Model):
         return self.name
 
 
+class Category(Model):
+    name = CharField(max_length=100, null=True)
+
+
+class Article(Model):
+    title = CharField(max_length=100, null=True)
+    content = TextField()
+    category_id = ForeignKey(Category, on_delete=DO_NOTHING)
+    image = CharField(max_length=200, null=True)
+
+
 class Question(Model):
     contents = TextField()
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
