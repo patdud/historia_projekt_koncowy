@@ -1,4 +1,15 @@
-from django.db import models
+from django.db import (
+    Model,
+    CharField,
+    DateField,
+    DateTimeField,
+    ForeignKey,
+    IntegerField,
+    TextField,
+    BooleanField,
+    CASCADE,
+    DO_NOTHING
+)
 
 # Create your models here.
 class Level(Model):
