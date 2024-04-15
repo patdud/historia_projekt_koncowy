@@ -26,8 +26,3 @@ class Article(Model):
     content = TextField()
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     image = CharField(max_length=200, null=True)
-
-class UserCategory(Model):
-    user_id = ForeignKey(User, on_delete=DO_NOTHING)
-    category_id = ForeignKey(Category, on_delete=DO_NOTHING())
-    points = IntegerField()
