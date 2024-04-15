@@ -29,3 +29,5 @@ class Question(Model):
 
     def __str__(self):
         return f"{self.contents}"
+
+# end of the line
