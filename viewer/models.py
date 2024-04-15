@@ -78,4 +78,4 @@ class User_category(Model):
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     points = IntegerField()
 
-#1851
+#1852
