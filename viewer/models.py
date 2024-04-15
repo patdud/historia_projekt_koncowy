@@ -26,3 +26,5 @@ class Article(Model):
     content = TextField()
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     image = CharField(max_length=200, null=True)
+
+    #test
