@@ -9,10 +9,27 @@ from django.db.models import (
     BooleanField,
     CASCADE,
     DO_NOTHING,
-    SET_NULL,
+    SET_NULL
 )
-
 from django.contrib.auth.models import User
+
+
+class Level(Model):
+    name = CharField(max_length=10)
+    threshold = IntegerField()
+
+    def __str__(self):
+        return self.title
+
+
+class Question(Model):
+    contents = TextField()
+    category_id = ForeignKey(Category)
+    score = IntegerField()
+    level = ForeignKey(Level)
+
+    def __str__(self):
+        return f"{self.contents}"
 
 
 class AnswerType(Model):
@@ -49,3 +66,6 @@ class User_category(Model):
     user_id = ForeignKey(User, on_delete=CASCADE)
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     points = IntegerField()
+
+ 
+    
