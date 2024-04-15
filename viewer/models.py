@@ -19,7 +19,7 @@ class Level(Model):
     threshold = IntegerField()
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Category(Model):
@@ -35,9 +35,9 @@ class Article(Model):
 
 class Question(Model):
     contents = TextField()
-    category_id = ForeignKey(Category)
+    category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     score = IntegerField()
-    level = ForeignKey(Level)
+    level = ForeignKey(Level, on_delete=DO_NOTHING)
 
     def __str__(self):
         return f"{self.contents}"
@@ -77,5 +77,3 @@ class User_category(Model):
     user_id = ForeignKey(User, on_delete=CASCADE)
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     points = IntegerField()
-
-#1852
