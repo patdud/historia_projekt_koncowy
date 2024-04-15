@@ -11,11 +11,11 @@ from django.db import (
     DO_NOTHING
 )
 
+
 # Create your models here.
 class Level(Model):
     name = CharField(max_length=10)
     threshold = IntegerField()
-
 
     def __str__(self):
         return self.title
