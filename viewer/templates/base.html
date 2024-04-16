@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagiVita</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HollyMovies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background-color: lightgrey;
+            min-height: 100%;
+        }
+        .navigation-bar-left {
+            background-color: rgb(77, 77, 77);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            height: 999px;
+            width: 20%;
+            float: left;
+        }
+        .navigation-bar-right {
+            background-color: rgb(77, 77, 77);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            min-height: 999px;
+            width: 20%;
+            float: right;
+        }
+        .navigation-bar-left p {
+            line-height: 60px;
+        }
+        .navigation-bar-right p {
+            line-height: 40px;
+        }
+        .center {
+            padding: 50px;
+        }
+        .button-circle {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+        }
+        .category-button {
+            margin: 10px
+        }
+    </style>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div style="grid">
+        <div class="navigation-bar-left">
+            <p class="h1"><a href="{% url 'index' %}">
+                MagiVita
+            </a></p>
+            <p class="h3">Ucz się</p>
+            <p class="h3">Teksty</p>
+            <p class="h3">Fiszki</p>
+        </div>
+        <div class="navigation-bar-right">
+            <p class="h2">Profil</p>
+            <p class="h5">Punkty</p>
+        </div>
+        <div class="text-center center">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

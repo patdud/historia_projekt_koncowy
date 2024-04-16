@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="text-center center">
+        <div>
+            <button type="submit" name="prehistory" class="category-button btn btn-success btn-large">Prehistoria</button>
+        </div>
+        <div>
+            <button type="submit" name="antiquity" class="category-button btn btn-success btn-large">Starożytność</button>
+        </div>
+        <div>
+            <button type="submit" name="medieval" class="category-button btn btn-success btn-large">Średniowiecze</button>
+        </div>
+        <div>
+            <button type="submit" name="modernity" class="category-button btn btn-success btn-large">Nowożytność</button>
+        </div>
+        <div>
+            <button type="submit" name="xxage" class="category-button btn btn-success btn-large">Epoka XIX wieku</button>
+        </div>
+        <div>
+            <button type="submit" name="contemporary" class="category-button btn btn-success btn-large">Współczesność</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
