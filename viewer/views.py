@@ -17,12 +17,9 @@ from viewer.models import Level, Category, Article, Question, AnswerType, Answer
 
 class MainSiteView(View):
     def get(self, request):
-
-        category = Category.objects.all()
-
         return render(
             request, template_name='index.html',
-            context={'category': category}
+            context={}
         )
 
     def post(self, request):
