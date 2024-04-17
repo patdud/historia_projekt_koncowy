@@ -42,30 +42,34 @@ class MainSiteView(View):
 
 
 class LevelView(View):
+    category = None
 
+    def __init__(self):
+        super().__init__()
+        self.category = None
 
     def get(self, request, **kwargs):
-        self.category = kwargs.get('category', None)
+        category = kwargs.get('category', None)
 
-        if self.category in ['1', '2', '3', '4', '5', '6']:
+        if category in ['1', '2', '3', '4', '5', '6']:
             return render(request, template_name='levels.html',
                           context={})
         else:
             return redirect(reverse('index'))
 
     def post(self, request, **kwargs):
-        self.category = kwargs.get('category', None)
+        category = kwargs.get('category', None)
 
         if request.POST.get('beginner') is not None:
-            return redirect(reverse('quiz', args=[self.category, '1']))
+            return redirect(reverse('quiz', args=[category, '1']))
         elif request.POST.get('novice') is not None:
-            return redirect(reverse('quiz', args=[self.category, '2']))
+            return redirect(reverse('quiz', args=[category, '2']))
         elif request.POST.get('intermediate') is not None:
-            return redirect(reverse('quiz', args=[self.category, '3']))
+            return redirect(reverse('quiz', args=[category, '3']))
         elif request.POST.get('advanced') is not None:
-            return redirect(reverse('quiz', args=[self.category, '4']))
+            return redirect(reverse('quiz', args=[category, '4']))
         elif request.POST.get('master') is not None:
-            return redirect(reverse('quiz', args=[self.category, '5']))
+            return redirect(reverse('quiz', args=[category, '5']))
         else:
             return redirect(reverse('index'))
 
@@ -83,16 +87,12 @@ class QuizView(View):
                 selected_questions.append(question)
 
         chosen_question = random.choice(selected_questions)
-        print(chosen_question)
 
         answers = []
         for answer in Answer.objects.all():
-            print(f"answer.question_id.id = {answer.question_id.id}")
-            print(f"chosen_question.id = {chosen_question.id}\n\n")
 
             if answer.question_id.id == chosen_question.id:
                 answers.append(answer.content)
-            print(answers)
 
         if category is not None and level is not None:
             return render(request, template_name='quiz.html',
