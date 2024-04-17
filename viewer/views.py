@@ -42,6 +42,12 @@ class MainSiteView(View):
 
 
 class LevelView(View):
+    category = None
+
+    def __init__(self):
+        super().__init__()
+        self.category = None
+
     def get(self, request, **kwargs):
         category = kwargs.get('category', None)
 
@@ -76,15 +82,19 @@ class QuizView(View):
 
         selected_questions = []
         for question in Question.objects.all():
-            print(f"question.category_id = {question.category_id.id}")
-            print(f"category = {category}")
 
             if str(question.category_id.id) == category:
                 selected_questions.append(question)
 
         chosen_question = random.choice(selected_questions)
-        print(chosen_question)
+
+        answers = []
+        for answer in Answer.objects.all():
+
+            if answer.question_id.id == chosen_question.id:
+                answers.append(answer.content)
 
         if category is not None and level is not None:
             return render(request, template_name='quiz.html',
-                          context={'question': chosen_question})
+                          context={'question': chosen_question.contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+
