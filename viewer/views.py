@@ -40,34 +40,28 @@ class MainSiteView(View):
 
 
 class LevelView(View):
-    category = None
-
-    def __init__(self):
-        super().__init__()
-        self.category = None
-
     def get(self, request, **kwargs):
-        self.category = kwargs.get('category', None)
+        category = kwargs.get('category', None)
 
-        if self.category in ['prehistory', 'antiquity', 'medieval', 'modernity', 'xxage', 'contemporary']:
+        if category in ['prehistory', 'antiquity', 'medieval', 'modernity', 'xxage', 'contemporary']:
             return render(request, template_name='levels.html',
                           context={})
         else:
             return redirect(reverse('index'))
 
     def post(self, request, **kwargs):
-        self.category = kwargs.get('category', None)
+        category = kwargs.get('category', None)
 
         if request.POST.get('beginner') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'beginner']))
+            return redirect(reverse('quiz', args=[category, 'beginner']))
         elif request.POST.get('novice') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'novice']))
+            return redirect(reverse('quiz', args=[category, 'novice']))
         elif request.POST.get('intermediate') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'intermediate']))
+            return redirect(reverse('quiz', args=[category, 'intermediate']))
         elif request.POST.get('advanced') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'advanced']))
+            return redirect(reverse('quiz', args=[category, 'advanced']))
         elif request.POST.get('master') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'master']))
+            return redirect(reverse('quiz', args=[category, 'master']))
         else:
             return redirect(reverse('index'))
 
