@@ -97,3 +97,4 @@ class QuizView(View):
         if category is not None and level is not None:
             return render(request, template_name='quiz.html',
                           context={'question': chosen_question.contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+
