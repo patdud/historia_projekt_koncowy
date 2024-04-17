@@ -12,6 +12,8 @@ from django.views.generic import (
 from django.urls import reverse_lazy, reverse
 
 from viewer.models import Level, Category, Article, Question, AnswerType, Answer, Quiz, Quiz_question, User_category
+
+
 # from viewer.forms import SignUpForm
 
 
@@ -24,62 +26,57 @@ class MainSiteView(View):
 
     def post(self, request):
         if request.POST.get('prehistory') is not None:
-            return redirect(reverse('prehistory'))
+            return redirect(reverse('level', args=['prehistory']))
         elif request.POST.get('antiquity') is not None:
-            return redirect(reverse('antiquity'))
+            return redirect(reverse('level', args=['antiquity']))
         elif request.POST.get('medieval') is not None:
-            return redirect(reverse('medieval'))
+            return redirect(reverse('level', args=['medieval']))
         elif request.POST.get('modernity') is not None:
-            return redirect(reverse('modernity'))
+            return redirect(reverse('level', args=['modernity']))
         elif request.POST.get('xxage') is not None:
-            return redirect(reverse('xxage'))
+            return redirect(reverse('level', args=['xxage']))
         elif request.POST.get('contemporary') is not None:
-            return redirect(reverse('contemporary'))
+            return redirect(reverse('level', args=['contemporary']))
 
 
-class LevelPrehistoryView(View):
-    def get(self, request):
-        return render(
-            request, template_name='levels.html',
-            context={}
-        )
+class LevelView(View):
+    category = None
+
+    def __init__(self):
+        super().__init__()
+        self.category = None
+
+    def get(self, request, **kwargs):
+        self.category = kwargs.get('category', None)
+
+        if self.category in ['prehistory', 'antiquity', 'medieval', 'modernity', 'xxage', 'contemporary']:
+            return render(request, template_name='levels.html',
+                          context={})
+        else:
+            return redirect(reverse('index'))
+
+    def post(self, request, **kwargs):
+        self.category = kwargs.get('category', None)
+
+        if request.POST.get('beginner') is not None:
+            return redirect(reverse('quiz', args=[self.category, 'beginner']))
+        elif request.POST.get('novice') is not None:
+            return redirect(reverse('quiz', args=[self.category, 'novice']))
+        elif request.POST.get('intermediate') is not None:
+            return redirect(reverse('quiz', args=[self.category, 'intermediate']))
+        elif request.POST.get('advanced') is not None:
+            return redirect(reverse('quiz', args=[self.category, 'advanced']))
+        elif request.POST.get('master') is not None:
+            return redirect(reverse('quiz', args=[self.category, 'master']))
+        else:
+            return redirect(reverse('index'))
 
 
-class LevelAntiquityView(View):
-    def get(self, request):
-        return render(
-            request, template_name='levels.html',
-            context={}
-        )
+class QuizView(View):
+    def get(self, request, **kwargs):
+        category = kwargs.get('category', None)
+        level = kwargs.get('level', None)
 
-
-class LevelMedievalView(View):
-    def get(self, request):
-        return render(
-            request, template_name='levels.html',
-            context={}
-        )
-
-
-class LevelModernityView(View):
-    def get(self, request):
-        return render(
-            request, template_name='levels.html',
-            context={}
-        )
-
-
-class LevelXXAgeView(View):
-    def get(self, request):
-        return render(
-            request, template_name='levels.html',
-            context={}
-        )
-
-
-class LevelContemporaryView(View):
-    def get(self, request):
-        return render(
-            request, template_name='levels.html',
-            context={}
-        )
+        if category is not None and level is not None:
+            return render(request, template_name='quiz.html',
+                          context={})
