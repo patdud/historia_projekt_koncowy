@@ -9,6 +9,8 @@ from django.views.generic import (
     ListView, CreateView, UpdateView, DeleteView
 )
 
+import random
+
 from django.urls import reverse_lazy, reverse
 
 from viewer.models import Level, Category, Article, Question, AnswerType, Answer, Quiz, Quiz_question, User_category
@@ -26,17 +28,17 @@ class MainSiteView(View):
 
     def post(self, request):
         if request.POST.get('prehistory') is not None:
-            return redirect(reverse('level', args=['prehistory']))
+            return redirect(reverse('level', args=['1']))
         elif request.POST.get('antiquity') is not None:
-            return redirect(reverse('level', args=['antiquity']))
+            return redirect(reverse('level', args=['2']))
         elif request.POST.get('medieval') is not None:
-            return redirect(reverse('level', args=['medieval']))
+            return redirect(reverse('level', args=['3']))
         elif request.POST.get('modernity') is not None:
-            return redirect(reverse('level', args=['modernity']))
+            return redirect(reverse('level', args=['4']))
         elif request.POST.get('xxage') is not None:
-            return redirect(reverse('level', args=['xxage']))
+            return redirect(reverse('level', args=['5']))
         elif request.POST.get('contemporary') is not None:
-            return redirect(reverse('level', args=['contemporary']))
+            return redirect(reverse('level', args=['6']))
 
 
 class LevelView(View):
@@ -49,7 +51,7 @@ class LevelView(View):
     def get(self, request, **kwargs):
         self.category = kwargs.get('category', None)
 
-        if self.category in ['prehistory', 'antiquity', 'medieval', 'modernity', 'xxage', 'contemporary']:
+        if self.category in ['1', '2', '3', '4', '5', '6']:
             return render(request, template_name='levels.html',
                           context={})
         else:
@@ -59,15 +61,15 @@ class LevelView(View):
         self.category = kwargs.get('category', None)
 
         if request.POST.get('beginner') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'beginner']))
+            return redirect(reverse('quiz', args=[self.category, '1']))
         elif request.POST.get('novice') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'novice']))
+            return redirect(reverse('quiz', args=[self.category, '2']))
         elif request.POST.get('intermediate') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'intermediate']))
+            return redirect(reverse('quiz', args=[self.category, '3']))
         elif request.POST.get('advanced') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'advanced']))
+            return redirect(reverse('quiz', args=[self.category, '4']))
         elif request.POST.get('master') is not None:
-            return redirect(reverse('quiz', args=[self.category, 'master']))
+            return redirect(reverse('quiz', args=[self.category, '5']))
         else:
             return redirect(reverse('index'))
 
@@ -77,6 +79,18 @@ class QuizView(View):
         category = kwargs.get('category', None)
         level = kwargs.get('level', None)
 
+
+        selected_questions = []
+        for question in Question.objects.all():
+            print(f"question.category_id = {question.category_id.id}")
+            print(f"category = {category}")
+
+            if str(question.category_id.id) == category:
+                selected_questions.append(question)
+
+        chosen_question = random.choice(selected_questions)
+        print(chosen_question)
+
         if category is not None and level is not None:
             return render(request, template_name='quiz.html',
-                          context={})
+                          context={'question': chosen_question})
