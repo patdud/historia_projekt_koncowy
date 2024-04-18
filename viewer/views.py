@@ -16,7 +16,7 @@ from django.urls import reverse_lazy, reverse
 from viewer.models import Level, Category, Article, Question, AnswerType, Answer, Quiz, Quiz_question, User_category
 
 
-# from viewer.forms import SignUpForm
+from viewer.forms import SignUpForm
 
 
 class MainSiteView(View):
@@ -97,4 +97,18 @@ class QuizView(View):
         if category is not None and level is not None:
             return render(request, template_name='quiz.html',
                           context={'question': chosen_question.contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+
+
+class SubmittableLoginView(LoginView):
+    template_name = 'form.html'
+
+
+class CustomLogoutView(LogoutView):
+    template_name = 'logout.html'
+
+
+class SignUpView(CreateView):
+    template_name = 'form.html'
+    form_class = SignUpForm
+    success_url = reverse_lazy('index')
 

@@ -19,8 +19,17 @@ from django.urls import path
 
 from django.contrib.auth.models import Permission
 
-from viewer.models import Level, Category, Article, Question, AnswerType, Answer, Quiz, Quiz_question, User_category
-from viewer.views import LevelView, MainSiteView, QuizView
+from viewer.models import (Level,
+                           Category,
+                           Article,
+                           Question,
+                           AnswerType,
+                           Answer,
+                           Quiz,
+                           Quiz_question,
+                           User_category,)
+
+from viewer.views import LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView
 
 admin.site.register(Level)
 admin.site.register(Category)
@@ -34,6 +43,9 @@ admin.site.register(User_category)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/login/', SubmittableLoginView.as_view(), name='login'),
+    path('accounts/register/', SignUpView.as_view(), name='register'),
+    path('accounts/logout/', CustomLogoutView.as_view(), name='logout'),
     path('magivita/', MainSiteView.as_view(), name='index'),
     path('', MainSiteView.as_view(), name='index'),
     path('magivita/<category>/', LevelView.as_view(), name='level'),

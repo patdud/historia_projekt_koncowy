@@ -77,4 +77,3 @@ class User_category(Model):
     user_id = ForeignKey(User, on_delete=CASCADE)
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
     points = IntegerField()
-
