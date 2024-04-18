@@ -2,6 +2,7 @@ from logging import getLogger
 
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
+from django.contrib.auth.models import User
 
 from django.shortcuts import render, redirect
 from django.views import View
@@ -75,29 +76,65 @@ class LevelView(View):
 
 
 class QuizView(View):
+    quiz = None
     def get(self, request, **kwargs):
         category = kwargs.get('category', None)
         level = kwargs.get('level', None)
+        quiz = None
+
+        quiz_length = 0
+        for question in Quiz_question.objects.all():
+            if question.quiz_id == quiz:
+                quiz_length += 1
+        print(f"{quiz_length = }")
+
+        if quiz == None and quiz_length < 5:
+            #jeśli quiz nie istnieje to tworzymy + przypisujemy patnie w tabeli quiz_question
 
 
-        selected_questions = []
-        for question in Question.objects.all():
 
-            if str(question.category_id.id) == category:
-                selected_questions.append(question)
+            #tworzenie quizu ( user_id )
 
-        chosen_question = random.choice(selected_questions)
+            new_quiz = Quiz(user_id = request.user, name = "Nasz pierwszy quiz")
+            new_quiz.save()
+            quiz = new_quiz
 
-        answers = []
-        for answer in Answer.objects.all():
+            #tworzenie quiz_question
 
-            if answer.question_id.id == chosen_question.id:
-                answers.append(answer.content)
+                # request do bazy
 
-        if category is not None and level is not None:
-            return render(request, template_name='quiz.html',
-                          context={'question': chosen_question.contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+            for question in Question.objects.all():
 
+                selected_questions = []
+                for question in Question.objects.all():
+
+                    if str(question.category_id.id) == category:
+                        selected_questions.append(question)
+
+                chosen_question = random.choice(selected_questions)
+
+                new_question = Quiz_question(quiz_id = new_quiz, question_id = chosen_question)
+                new_question.save()
+
+                answers = []
+                for answer in Answer.objects.all():
+
+                    if answer.question_id.id == chosen_question.id:
+                        answers.append(answer.content)
+
+                if category is not None and level is not None:
+                    return render(request, template_name='quiz.html',
+                                  context={'question': chosen_question.contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+
+    def post(self, request, **kwargs):
+
+        category = kwargs.get('category', None)
+        level = kwargs.get('level', None)
+
+        if request.POST.get('answer_A') is not None:
+            return redirect(reverse('quiz', args=[category, level]))
+        else:
+            return redirect(reverse('index'))
 
 class SubmittableLoginView(LoginView):
     template_name = 'form.html'

@@ -47,6 +47,7 @@ urlpatterns = [
     path('accounts/register/', SignUpView.as_view(), name='register'),
     path('accounts/logout/', CustomLogoutView.as_view(), name='logout'),
     path('magivita/', MainSiteView.as_view(), name='index'),
+    path('accounts/profile', MainSiteView.as_view(), name='index'),
     path('', MainSiteView.as_view(), name='index'),
     path('magivita/<category>/', LevelView.as_view(), name='level'),
     path('magivita/<category>/<level>/', QuizView.as_view(), name='quiz'),
