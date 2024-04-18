@@ -39,8 +39,8 @@ class Question(Model):
     score = IntegerField()
     level = ForeignKey(Level, on_delete=DO_NOTHING)
 
-    def __str__(self):
-        return f"{self.contents}"
+    #def __str__(self):
+    #    return self.id
 
 
 class AnswerType(Model):
@@ -57,7 +57,7 @@ class Answer(Model):
     flag = BooleanField(default=False)
 
     def __str__(self):
-        return self.content
+        return str(self.id)
 
 
 class Quiz(Model):

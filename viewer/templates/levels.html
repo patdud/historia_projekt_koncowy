@@ -2,21 +2,25 @@
 
 {% block content %}
 
-<div class="text-center center">
-    <div>
-        <button type="submit" name="1" class="button-circle btn-success">1</button>
-    </div>
-    <div>
-        <button type="submit" name="2" class="button-circle btn-success">2</button>
-    </div>
-    <div>
-        <button type="submit" name="3" class="button-circle btn-success">3</button>
-    </div>
-    <div>
-        <button type="submit" name="4" class="button-circle btn-success">4</button>
-    </div>
-    <div>
-        <button type="submit" name="5" class="button-circle btn-success">5</button>
-</div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="text-center center">
+            <div>
+                <button type="submit" name="beginner" class="category-button btn btn-success btn-large">Beginner</button>
+            </div>
+            <div>
+                <button type="submit" name="novice" class="category-button btn btn-success btn-large">Novice</button>
+            </div>
+            <div>
+                <button type="submit" name="intermediate" class="category-button btn btn-success btn-large">Intermediate</button>
+            </div>
+            <div>
+                <button type="submit" name="advanced" class="category-button btn btn-success btn-large">Advanced</button>
+            </div>
+            <div>
+                <button type="submit" name="master" class="category-button btn btn-success btn-large">Master</button>
+            </div>
+        </div>
+    </form>
 
 {% endblock %}

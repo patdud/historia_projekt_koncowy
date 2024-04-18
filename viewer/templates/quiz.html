@@ -1,0 +1,30 @@
+{% extends "base2.html" %}
+
+{% block content %}
+
+    <p class="container text-center">
+        <p class="row">
+            <div class="col"></div>
+            <p class="col">
+                <p>Pytanie: {{ question }}</p>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <p>
+                        <button class="btn btn-success btn-large">{{ answer_1 }}</button>
+                    </p>
+                    <p>
+                        <button class="btn btn-success btn-large">{{ answer_2 }}</button>
+                    </p>
+                    <p>
+                        <button class="btn btn-success btn-large">{{ answer_3 }}</button>
+                    </p>
+                    <p>
+                        <button class="btn btn-success btn-large">{{ answer_4 }}</button>
+                    </p>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+{% endblock %}
