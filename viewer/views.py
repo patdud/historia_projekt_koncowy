@@ -1,7 +1,7 @@
 from logging import getLogger
 
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, resolve_url
 from django.contrib.auth.models import User
 
 from django.shortcuts import render, redirect
@@ -76,8 +76,6 @@ class LevelView(View):
 
 
 class QuizView(View):
-
-    choice_made = False
     def get(self, request, **kwargs):
         quiz = kwargs.get('quiz', None)
         step = int(kwargs.get('step', None))
@@ -168,7 +166,7 @@ class SignUpView(CreateView):
     template_name = 'form.html'
     form_class = SignUpForm
     success_url = reverse_lazy('index')
-    # def post(self, request):
-    #
-    #     create_user_categorys(request.user)
-    #     return render(request, template_name='index.html')
+
+
+def to_main_site(request):
+    return redirect('index')
