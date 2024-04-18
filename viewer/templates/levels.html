@@ -2,24 +2,25 @@
 
 {% block content %}
 
-<form action="" method="post">
-    {% csrf_token %}
-    <div class="text-center center">
-        <div>
-            <button type="submit" name="beginner" class="category-button btn btn-success btn-large">Beginner</button>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="text-center center">
+            <div>
+                <button type="submit" name="beginner" class="category-button btn btn-success btn-large">Beginner</button>
+            </div>
+            <div>
+                <button type="submit" name="novice" class="category-button btn btn-success btn-large">Novice</button>
+            </div>
+            <div>
+                <button type="submit" name="intermediate" class="category-button btn btn-success btn-large">Intermediate</button>
+            </div>
+            <div>
+                <button type="submit" name="advanced" class="category-button btn btn-success btn-large">Advanced</button>
+            </div>
+            <div>
+                <button type="submit" name="master" class="category-button btn btn-success btn-large">Master</button>
+            </div>
         </div>
-        <div>
-            <button type="submit" name="novice" class="category-button btn btn-success btn-large">Novice</button>
-        </div>
-        <div>
-            <button type="submit" name="intermediate" class="category-button btn btn-success btn-large">Intermediate</button>
-        </div>
-        <div>
-            <button type="submit" name="advanced" class="category-button btn btn-success btn-large">Advanced</button>
-        </div>
-        <div>
-            <button type="submit" name="master" class="category-button btn btn-success btn-large">Master</button>
-    </div>
-</form>
+    </form>
 
 {% endblock %}
