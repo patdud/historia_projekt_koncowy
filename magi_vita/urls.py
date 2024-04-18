@@ -17,8 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.contrib.auth.models import Permission
-
 from viewer.models import (Level,
                            Category,
                            Article,
@@ -29,7 +27,7 @@ from viewer.models import (Level,
                            Quiz_question,
                            User_category,)
 
-from viewer.views import LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView
+from viewer.views import LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView, to_main_site
 
 admin.site.register(Level)
 admin.site.register(Category)
@@ -43,12 +41,13 @@ admin.site.register(User_category)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/login/', SubmittableLoginView.as_view(), name='login'),
-    path('accounts/register/', SignUpView.as_view(), name='register'),
-    path('accounts/logout/', CustomLogoutView.as_view(), name='logout'),
+    path('magivita/login/', SubmittableLoginView.as_view(), name='login'),
+    path('magivita/register/', SignUpView.as_view(), name='register'),
+    path('magivita/logout/', CustomLogoutView.as_view(), name='logout'),
+    path('magivita/profile/', to_main_site),
     path('magivita/', MainSiteView.as_view(), name='index'),
     path('accounts/profile', MainSiteView.as_view(), name='index'),
-    path('', MainSiteView.as_view(), name='index'),
+    path('', to_main_site),
     path('magivita/<category>/', LevelView.as_view(), name='level'),
     path('magivita/<category>/<level>/', QuizView.as_view(), name='quiz'),
 ]
