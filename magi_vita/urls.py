@@ -44,7 +44,7 @@ urlpatterns = [
     path('magivita/login/', SubmittableLoginView.as_view(), name='login'),
     path('magivita/register/', SignUpView.as_view(), name='register'),
     path('magivita/logout/', CustomLogoutView.as_view(), name='logout'),
-    path('magivita/profile/', to_main_site),
+    path('accounts/profile/', to_main_site),
     path('magivita/', MainSiteView.as_view(), name='index'),
     path('accounts/profile', MainSiteView.as_view(), name='index'),
     path('', to_main_site),
