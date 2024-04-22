@@ -20,7 +20,7 @@ from viewer.models import Level, Category, Article, Question, AnswerType, Answer
 from viewer.forms import SignUpForm
 
 
-class MainSiteView(View):
+class MainSiteView(LoginRequiredMixin, View):
     def get(self, request):
         return render(
             request, template_name='index.html',
@@ -123,18 +123,9 @@ class QuizView(View):
 
             return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
 
-
-        # elif request.POST.get('answer_B') is not None:
-        #     print(request.POST.get('answer_B'))
-        #     return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
-        # elif request.POST.get('answer_C') is not None:
-        #     print(request.POST.get('answer_C'))
-        #     return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
-        # elif request.POST.get('answer_D') is not None:
-        #     print(request.POST.get('answer_D'))
-        #     return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
         else:
              return redirect(reverse('index'))
+
 
 
 class SummaryView(View):
