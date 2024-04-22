@@ -83,7 +83,7 @@ class QuizView(View):
         print(f"Nasz quiz: {quiz} typu {type(quiz)}")
 
         if step == 5:
-            print("koniec quizu") # Dodać zliczanie punktów
+            print("koniec quizu") # Dodać zliczanie punktów - DZIAŁA!
             return redirect(reverse('index'))
 
         set_of_questions = []
