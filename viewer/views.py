@@ -20,7 +20,7 @@ from viewer.models import Level, Category, Article, Question, AnswerType, Answer
 from viewer.forms import SignUpForm
 
 
-class MainSiteView(View):
+class MainSiteView(LoginRequiredMixin, View):
     def get(self, request):
         return render(
             request, template_name='index.html',
@@ -77,6 +77,7 @@ class LevelView(View):
 
 class QuizView(View):
     quiz = None
+
     def get(self, request, **kwargs):
         category = kwargs.get('category', None)
         level = kwargs.get('level', None)
@@ -95,7 +96,7 @@ class QuizView(View):
 
             #tworzenie quizu ( user_id )
 
-            new_quiz = Quiz(user_id = request.user, name = "Nasz pierwszy quiz")
+            new_quiz = Quiz(user_id=request.user, name="Nasz pierwszy quiz")
             new_quiz.save()
             quiz = new_quiz
 
@@ -135,6 +136,7 @@ class QuizView(View):
             return redirect(reverse('quiz', args=[category, level]))
         else:
             return redirect(reverse('index'))
+
 
 class SubmittableLoginView(LoginView):
     template_name = 'form.html'
