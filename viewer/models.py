@@ -39,8 +39,8 @@ class Question(Model):
     score = IntegerField()
     level = ForeignKey(Level, on_delete=DO_NOTHING)
 
-    #def __str__(self):
-    #    return self.id
+    def __str__(self):
+        return f"{self.contents[0:30]}..."
 
 
 class AnswerType(Model):
@@ -65,12 +65,15 @@ class Quiz(Model):
     name = CharField(max_length=100, null=True) # czy to jest potrzebne?
 
     def __str__(self):
-        return self.name
+        return f"id: {self.id}, {self.user_id}, {self.name}"
 
 
 class Quiz_question(Model):
     quiz_id = ForeignKey(Quiz, on_delete=CASCADE)
     question_id = ForeignKey(Question, on_delete=CASCADE)
+
+    def __str__(self):
+        return f"{self.quiz_id}, {self.question_id}"
 
 
 class User_category(Model):
