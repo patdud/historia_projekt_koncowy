@@ -63,15 +63,15 @@ class LevelView(View):
         category = kwargs.get('category', None)
 
         if request.POST.get('beginner') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,1),0]))
+            return redirect(reverse('quiz', args=[quiz_generator(request,category,1),'0']))
         elif request.POST.get('novice') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,2),0]))
+            return redirect(reverse('quiz', args=[quiz_generator(request,category,2),'0']))
         elif request.POST.get('intermediate') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,3),0]))
+            return redirect(reverse('quiz', args=[quiz_generator(request,category,3),'0']))
         elif request.POST.get('advanced') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,4),0]))
+            return redirect(reverse('quiz', args=[quiz_generator(request,category,4),'0']))
         elif request.POST.get('master') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,5),0]))
+            return redirect(reverse('quiz', args=[quiz_generator(request,category,5),'0']))
         else:
             return redirect(reverse('index'))
 
@@ -79,32 +79,45 @@ class LevelView(View):
 class QuizView(View):
     def get(self, request, **kwargs):
         quiz = kwargs.get('quiz', None)
+        step = int(kwargs.get('step', None))
         print(f"Nasz quiz: {quiz} typu {type(quiz)}")
 
-        set_of_questions = []
-        for question in Question.objects.all():
-            if question.id == int(quiz):
-                set_of_questions.append(question)
+        if step == 5:
+            print("koniec quizu") # Dodać zliczanie punktów
+            return redirect(reverse('index'))
 
-        question = set_of_questions[0]
+        set_of_questions = []
+        for quiz_question in Quiz_question.objects.all():
+#            print(f"{quiz_question.quiz_id.id=} ,{int(quiz)=}")
+            if quiz_question.quiz_id.id == int(quiz):
+                set_of_questions.append(quiz_question.question_id)
+
+        question = set_of_questions[step]
+        print(f"{question=}")
         answers = []
         for answer in Answer.objects.all():
-
-            if answer.question_id.id == set_of_questions[0].id:
+            print(answer)
+            print(f"{answer.question_id.id=}, {set_of_questions[step].id}")
+            if answer.question_id.id == set_of_questions[step].id:
                 answers.append(answer.content)
 
 
         return render(request, template_name='quiz.html',
-        context={'question': "Ile jest 2 + 2?", 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+        context={'question': set_of_questions[step].contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
 
     def post(self, request, **kwargs):
+        quiz = kwargs.get('quiz', None)
+        step = int(kwargs.get('step', None))
 
-        category = kwargs.get('category', None)
-        level = kwargs.get('level', None)
-        #quiz = kwargs.get('quiz', None)
 
         if request.POST.get('answer_A') is not None:
-            return redirect(reverse('quiz', args=[category, level, '25']))
+            return redirect(reverse('quiz', args=[quiz, str(step+1)]))
+        elif request.POST.get('answer_B') is not None:
+            return redirect(reverse('quiz', args=[quiz, str(step+1)]))
+        elif request.POST.get('answer_C') is not None:
+            return redirect(reverse('quiz', args=[quiz, str(step+1)]))
+        elif request.POST.get('answer_D') is not None:
+            return redirect(reverse('quiz', args=[quiz, str(step+1)]))
         else:
             return redirect(reverse('index'))
 
