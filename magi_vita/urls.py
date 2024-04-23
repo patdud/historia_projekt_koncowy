@@ -28,7 +28,7 @@ from viewer.models import (Level,
                            User_category,)
 
 from viewer.views import (LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView,
-                          to_main_site)
+                        SummaryView, to_main_site)
 
 admin.site.register(Level)
 admin.site.register(Category)
@@ -49,5 +49,6 @@ urlpatterns = [
     path('magivita/', MainSiteView.as_view(), name='index'),
     path('', to_main_site),
     path('magivita/<category>/', LevelView.as_view(), name='level'),
-    path('magivita/quiz/<quiz>/<step>', QuizView.as_view(), name='quiz')
+    path('magivita/quiz/<quiz>/<step>/', QuizView.as_view(), name='quiz'),
+    path('magivita/summary/<quiz>/', SummaryView.as_view(), name='summary'),
 ]
