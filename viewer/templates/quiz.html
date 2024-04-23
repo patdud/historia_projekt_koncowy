@@ -10,16 +10,16 @@
                 <form action="" method="post">
                     {% csrf_token %}
                     <p>
-                        <button name='answer_A' class="btn btn-success btn-large">A: {{ answer_1 }}</button>
+                        <button name='answer' value='{{ answer_1.1 }}' class="btn btn-success btn-large">A: {{ answer_1.0 }}</button>
                     </p>
                     <p>
-                        <button name='answer_B' class="btn btn-success btn-large">B: {{ answer_2 }}</button>
+                        <button name='answer' value='{{ answer_2.1 }}' class="btn btn-success btn-large">B: {{ answer_2.0 }}</button>
                     </p>
                     <p>
-                        <button name='answer_C' class="btn btn-success btn-large">C: {{ answer_3 }}</button>
+                        <button name='answer' value='{{ answer_3.1 }}' class="btn btn-success btn-large">C: {{ answer_3.0 }}</button>
                     </p>
                     <p>
-                        <button name='answer_D' class="btn btn-success btn-large">D: {{ answer_4 }}</button>
+                        <button name='answer' value='{{ answer_4.1 }}' class="btn btn-success btn-large">D: {{ answer_4.0 }}</button>
                     </p>
                 </form>
             </div>

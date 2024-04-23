@@ -63,9 +63,10 @@ class Answer(Model):
 class Quiz(Model):
     user_id = ForeignKey(User, on_delete=CASCADE)
     name = CharField(max_length=100, null=True) # czy to jest potrzebne?
+    quiz_score = IntegerField(default = 0)
 
     def __str__(self):
-        return f"id: {self.id}, {self.user_id}, {self.name}"
+        return f"id: {self.id}, {self.user_id}, {self.name}, {self.quiz_score}"
 
 
 class Quiz_question(Model):
@@ -79,4 +80,4 @@ class Quiz_question(Model):
 class User_category(Model):
     user_id = ForeignKey(User, on_delete=CASCADE)
     category_id = ForeignKey(Category, on_delete=DO_NOTHING)
-    points = IntegerField()
+    points = IntegerField(default=0)
