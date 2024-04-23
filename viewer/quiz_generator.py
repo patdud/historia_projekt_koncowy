@@ -1,5 +1,5 @@
 from viewer.models import Level, Category, Article, Question, AnswerType, Answer, Quiz, Quiz_question, User_category
-
+from django.contrib.auth.models import User
 import random
 
 import time
@@ -12,9 +12,7 @@ def quiz_generator(request, category, level):
 
     selected_questions_by_category = []
     for question in Question.objects.all():
-        print("Przed warunkiem")
         if str(question.category_id.id) == category:
-            print("Warunek spełniony")
             selected_questions_by_category.append(question)
 
     prepared_quiz = 0
@@ -25,3 +23,13 @@ def quiz_generator(request, category, level):
         prepared_quiz += 1
 
     return str(quiz_id)
+
+
+def create_user_categorys(given_user):
+    #print(f"User {given_user} is alive!")
+    nowy_user = User.objects.filter(username=given_user)[0]
+    print(nowy_user)
+
+    for category in Category.objects.all():
+        new_score_relation = User_category(user_id=nowy_user, category_id=category)
+        new_score_relation.save()
