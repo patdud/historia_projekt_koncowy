@@ -62,70 +62,39 @@ class LevelView(View):
         category = kwargs.get('category', None)
 
         if request.POST.get('beginner') is not None:
-            return redirect(reverse('quiz', args=[category, '1']))
+            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,1),0]))
         elif request.POST.get('novice') is not None:
-            return redirect(reverse('quiz', args=[category, '2']))
+            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,2),0]))
         elif request.POST.get('intermediate') is not None:
-            return redirect(reverse('quiz', args=[category, '3']))
+            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,3),0]))
         elif request.POST.get('advanced') is not None:
-            return redirect(reverse('quiz', args=[category, '4']))
+            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,4),0]))
         elif request.POST.get('master') is not None:
-            return redirect(reverse('quiz', args=[category, '5']))
+            return redirect(reverse('quiz', args=[quiz_generator(request,request.user,category,5),0]))
         else:
             return redirect(reverse('index'))
 
 
 class QuizView(View):
-    quiz = None
-
     def get(self, request, **kwargs):
-        category = kwargs.get('category', None)
-        level = kwargs.get('level', None)
-        quiz = None
+        quiz = kwargs.get('quiz', None)
+        print(f"Nasz quiz: {quiz} typu {type(quiz)}")
 
-        quiz_length = 0
-        for question in Quiz_question.objects.all():
-            if question.quiz_id == quiz:
-                quiz_length += 1
-        print(f"{quiz_length = }")
+        set_of_questions = []
+        for question in Question.objects.all():
+            if question.id == int(quiz):
+                set_of_questions.append(question)
 
-        if quiz == None and quiz_length < 5:
-            #jeśli quiz nie istnieje to tworzymy + przypisujemy patnie w tabeli quiz_question
+        question = set_of_questions[0]
+        answers = []
+        for answer in Answer.objects.all():
+
+            if answer.question_id.id == set_of_questions[0].id:
+                answers.append(answer.content)
 
 
-
-            #tworzenie quizu ( user_id )
-
-            new_quiz = Quiz(user_id=request.user, name="Nasz pierwszy quiz")
-            new_quiz.save()
-            quiz = new_quiz
-
-            #tworzenie quiz_question
-
-                # request do bazy
-
-            for question in Question.objects.all():
-
-                selected_questions = []
-                for question in Question.objects.all():
-
-                    if str(question.category_id.id) == category:
-                        selected_questions.append(question)
-
-                chosen_question = random.choice(selected_questions)
-
-                new_question = Quiz_question(quiz_id = new_quiz, question_id = chosen_question)
-                new_question.save()
-
-                answers = []
-                for answer in Answer.objects.all():
-
-                    if answer.question_id.id == chosen_question.id:
-                        answers.append(answer.content)
-
-                if category is not None and level is not None:
-                    return render(request, template_name='quiz.html',
-                                  context={'question': chosen_question.contents, 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
+        return render(request, template_name='quiz.html',
+        context={'question': "Ile jest 2 + 2?", 'answer_1':answers[0], 'answer_2':answers[1], 'answer_3':answers[2], 'answer_4':answers[3]})
 
     def post(self, request, **kwargs):
 
@@ -133,7 +102,7 @@ class QuizView(View):
         level = kwargs.get('level', None)
 
         if request.POST.get('answer_A') is not None:
-            return redirect(reverse('quiz', args=[category, level]))
+            return redirect(reverse('quiz', args=[category, level, '25']))
         else:
             return redirect(reverse('index'))
 
