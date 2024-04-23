@@ -79,7 +79,7 @@ class QuizView(View):
     def get(self, request, **kwargs):
         quiz = kwargs.get('quiz', None)
         step = int(kwargs.get('step', None))
-        # print(f"Nasz quiz: {quiz} typu {type(quiz)}")
+        print(f"Nasz quiz: {quiz} typu {type(quiz)}")
 
         if step == 5:
             print("koniec quizu")  # Dodać zliczanie punktów - DZIAŁA!
@@ -124,7 +124,7 @@ class QuizView(View):
             return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
 
         else:
-             return redirect(reverse('index'))
+            return redirect(reverse('index'))
 
 
 

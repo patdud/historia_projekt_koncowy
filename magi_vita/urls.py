@@ -49,6 +49,6 @@ urlpatterns = [
     path('magivita/', MainSiteView.as_view(), name='index'),
     path('', to_main_site),
     path('magivita/<category>/', LevelView.as_view(), name='level'),
-    path('magivita/quiz/<quiz>/<step>', QuizView.as_view(), name='quiz'),
-    path('magivita/summary/<quiz>', SummaryView.as_view(), name='summary')
+    path('magivita/quiz/<quiz>/<step>/', QuizView.as_view(), name='quiz'),
+    path('magivita/summary/<quiz>/', SummaryView.as_view(), name='summary'),
 ]
