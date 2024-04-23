@@ -4,26 +4,24 @@ import random
 
 import time
 
-def quiz_generator(request, user, category, level):
+def quiz_generator(request, category, level):
 
-    for question in Quiz_question.objects.all():
-        print(f"{question.quiz_id.id=} test")
+    new_quiz = Quiz(user_id=request.user, name=str(time.time()))
+    new_quiz.save()
+    quiz_id = new_quiz.id
 
-        new_quiz = Quiz(user_id=request.user, name=str(time.time()))
-        new_quiz.save()
-        quiz_id = new_quiz.id
+    selected_questions_by_category = []
+    for question in Question.objects.all():
+        print("Przed warunkiem")
+        if str(question.category_id.id) == category:
+            print("Warunek spełniony")
+            selected_questions_by_category.append(question)
 
-        selected_questions_by_category = []
-        for question in Question.objects.all():
-            if str(question.category_id.id) == category and str(question.level_id.id) == level:
-                selected_questions_by_category.append(question)
-
-        prepared_quiz = 0
-        for question_x in selected_questions_by_category:
-            if len(prepared_quiz) < 5:
-                chosen_question = random.choice(prepared_quiz)
-                new_question = Quiz_question(quiz_id=new_quiz, question_id=chosen_question)
-                new_question.save()
-                prepared_quiz += 1
+    prepared_quiz = 0
+    while prepared_quiz < 5:
+        chosen_question = random.choice(selected_questions_by_category)
+        new_question = Quiz_question(quiz_id=new_quiz, question_id=chosen_question)
+        new_question.save()
+        prepared_quiz += 1
 
     return str(quiz_id)
