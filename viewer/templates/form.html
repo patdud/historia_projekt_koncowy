@@ -5,7 +5,7 @@
     <form method="post">
         {% csrf_token %}
         <table>{{ form }}</table>
-        <input type="submit" value="Submit" class="btn btn-primary">
+        <input name="button" type="submit" value="Submit" class="btn btn-primary">
     </form>
 
 {% endblock %}
