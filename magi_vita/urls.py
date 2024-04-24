@@ -17,8 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.contrib.auth.models import Permission
-
 from viewer.models import (Level,
                            Category,
                            Article,
@@ -27,10 +25,10 @@ from viewer.models import (Level,
                            Answer,
                            Quiz,
                            Quiz_question,
-                           User_category,)
+                           User_category)
 
 from viewer.views import (LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView,
-                        SummaryView, to_main_site)
+                          SummaryView, to_main_site)
 
 admin.site.register(Level)
 admin.site.register(Category)
@@ -43,7 +41,7 @@ admin.site.register(Quiz_question)
 admin.site.register(User_category)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('accounts/login/', SubmittableLoginView.as_view(), name='login'),
     path('accounts/register/', SignUpView.as_view(), name='register'),
     path('accounts/logout/', CustomLogoutView.as_view(), name='logout'),

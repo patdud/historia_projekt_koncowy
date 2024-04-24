@@ -1,7 +1,6 @@
-from viewer.models import Level, Category, Article, Question, AnswerType, Answer, Quiz, Quiz_question, User_category
+from viewer.models import Category, Question, Quiz, Quiz_question, User_category
 from django.contrib.auth.models import User
 import random
-
 import time
 
 def quiz_generator(request, category, level):
@@ -15,18 +14,18 @@ def quiz_generator(request, category, level):
         if str(question.category_id.id) == category:
             selected_questions_by_category.append(question)
 
-    prepared_quiz = 0
-    while prepared_quiz < 5:
+    prepared_quiz = []
+    while len(prepared_quiz) < 5:
         chosen_question = random.choice(selected_questions_by_category)
-        new_question = Quiz_question(quiz_id=new_quiz, question_id=chosen_question)
-        new_question.save()
-        prepared_quiz += 1
+        if chosen_question not in prepared_quiz:
+            new_question = Quiz_question(quiz_id=new_quiz, question_id=chosen_question)
+            new_question.save()
+            prepared_quiz.append(chosen_question)
 
     return str(quiz_id)
 
 
 def create_user_categorys(given_user):
-    #print(f"User {given_user} is alive!")
     nowy_user = User.objects.filter(username=given_user)[0]
     print(nowy_user)
 
