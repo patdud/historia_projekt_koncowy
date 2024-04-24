@@ -25,7 +25,7 @@ from viewer.models import (Level,
                            Answer,
                            Quiz,
                            Quiz_question,
-                           User_category,)
+                           User_category)
 
 from viewer.views import (LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView,
                           to_main_site, SummaryView)

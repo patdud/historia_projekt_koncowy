@@ -1,15 +1,12 @@
 from django.db.models import (
     Model,
     CharField,
-    DateField,
-    DateTimeField,
     ForeignKey,
     IntegerField,
     TextField,
     BooleanField,
     CASCADE,
     DO_NOTHING,
-    SET_NULL
 )
 from django.contrib.auth.models import User
 
@@ -62,7 +59,7 @@ class Answer(Model):
 
 class Quiz(Model):
     user_id = ForeignKey(User, on_delete=CASCADE)
-    name = CharField(max_length=100, null=True) # czy to jest potrzebne?
+    name = CharField(max_length=100, null=True)
     quiz_score = IntegerField(default = 0)
 
     def __str__(self):
