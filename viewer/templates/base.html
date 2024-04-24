@@ -18,15 +18,14 @@
         }
         body {
             background-color: #2C3639;
-            min-height: 100%;
         }
         .navigation-bar-left {
             background-color: #3F4E4F;
             color: white;
             padding: 25px;
             text-align: center;
-            height: 999px;
-            width: 10%;
+            height: 100vh;
+            width: 20%;
             float: left;
         }
         .navigation-bar-right {
@@ -34,8 +33,8 @@
             color: white;
             padding: 40px;
             text-align: center;
-            min-height: 999px;
-            width: 10%;
+            height: 100vh;
+            width: 20%;
             float: right;
         }
         .navigation-bar-left p {
@@ -45,7 +44,7 @@
             line-height: 40px;
         }
         .center {
-            padding: 50px;
+            padding: 30px;
         }
         .button-circle {
             border-radius: 50%;
@@ -54,18 +53,29 @@
             margin: 10px;
         }
         .category-button {
-            margin: 10px
+            margin: 20px;
+            width: 25%;
+            padding: 4%;
+            font-size: 30px;
+            white-space: nowrap;
         }
         a {
-        color: #DCD7D9;
-        text-decoration:none;
-        border-radius: 10px;
+            color: #DCD7D9;
+            text-decoration:none;
+            border-radius: 10px;
         }
-
         a:hover {
-        text-decoration:none;
-        color: #DCD7D9;
-
+            text-decoration:none;
+            color: inherit;
+        }
+        .no-button {
+            background: transparent;
+            border-color: transparent;
+            color: inherit;
+        }
+        .click-text:hover {
+            cursor: pointer;
+            color: #DCD7D9;
         }
     </style>
 
@@ -73,7 +83,7 @@
 <body class="d-flex flex-column min-vh-100">
     <div style="grid">
         <div class="navigation-bar-left">
-            <a class="navbar-brand" href="{% url 'index' %}" style="font-size:48px;">
+            <a class="h1 click-text" href="{% url 'index' %}" style="font-size:48px;">
                 MagiVita
             </a>
             <p class="h3">Ucz się</p>
@@ -82,21 +92,30 @@
         </div>
         <div class="navigation-bar-right">
             {% if user.is_authenticated %}
-            <a class="h2" href="">Profil</a>
-            <p class="h5">Punkty</p>
-            {% for category in categories %}
-            <p class="h2">{{ category }}</p>
+                <a class="h2 click-text" href="">{{ user }}</a>
+                {% if user.is_superuser %}
+                    <div><a class="h5 click-text" href="/admin/">Panel administratora</a></div>
+                {% endif %}
+                <p></p>
+                <p class="h5">Punkty:</p>
+                <p class="h5">Prehistoria: {{ points.0 }}</p>
+                <p class="h5">Starożytność: {{ points.1 }}</p>
+                <p class="h5">Średniowiecze: {{ points.2 }}</p>
+                <p class="h5">Nowożytność: {{ points.3 }}</p>
+                <p class="h5">Epoka XIX wieku: {{ points.4 }}</p>
+                <p class="h5">Współczesność: {{ points.5 }}</p>
+                {% for category in categories %}
+                    <p class="h2">{{ category }}</p>
 
-            {% endfor %}
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-            <button type="submit" class="btn btn-primary">Wyloguj się</button>
-            </form>
+                {% endfor %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="no-button click-text h2">Wyloguj się</button>
+                </form>
 
             {% else %}
-
                 <a class="h2" href="{% url 'login' %}">Zaloguj się</a>
-                <a class="h2" href="{% url 'sign_up' %}">Zarejestruj się</a>
+                <a class="h2" href="{% url 'register' %}">Zarejestruj się</a>
             {% endif %}
         </div>
         <div class="text-center center">

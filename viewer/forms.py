@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 from viewer.quiz_generator import create_user_categorys
 
+
 class SignUpForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
@@ -11,6 +12,7 @@ class SignUpForm(UserCreationForm):
                   'first_name',
                   'last_name',
                   'email']
+
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["password1"])

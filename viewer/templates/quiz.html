@@ -2,57 +2,39 @@
 
 {% block content %}
 
-<style>
-
-    .container
-    {
-    background-color: #3F4E4F;
-    padding: 30px;
-    border-radius: 25px;
-    font-size: 24px;
-    }
-
-
-    button
-    {
-    width: 50%;
-    margin: 5px;
-    font-size: 18px;
-    }
-
-</style>
-
-
     <div class="container text-center">
         <div class="row">
             <div class="col"></div>
-
-
-
-
-            <div class="col-8">
-                <p>Pytanie: {{ question }}</p>
+            <div class="col-9">
+                <p>{{ question }}</p>
                 <form action="" method="post">
                     {% csrf_token %}
-
                     <div class="col d-flex flex-nowrap">
-                        <button name="answer" value='{{ answer_1.1 }}' class="btn btn-success btn-large">{{ answer_1.0 }}</button>
-                        <button name="answer" value='{{ answer_2.1 }}' class="btn btn-success btn-large">{{ answer_2.0 }}</button>
+                        {% if answer_1.1 > 0 %}
+                            <button name="answer" value='{{ answer_1.1 }}' class="quiz-button quiz-button-true btn btn-outline-success">{{ answer_1.0 }}</button>
+                        {% else %}
+                            <button name="answer" value='{{ answer_1.1 }}' class="quiz-button quiz-button-false btn btn-outline-success">{{ answer_1.0 }}</button>
+                        {% endif %}
+                        {% if answer_2.1 > 0 %}
+                            <button name="answer" value='{{ answer_2.1 }}' class="quiz-button quiz-button-true btn btn-outline-success">{{ answer_2.0 }}</button>
+                        {% else %}
+                            <button name="answer" value='{{ answer_2.1 }}' class="quiz-button quiz-button-false btn btn-outline-success">{{ answer_2.0 }}</button>
+                        {% endif %}
                     </div>
-
-
-
                     <div class="col d-flex flex-nowrap">
-                        <button name="answer" value='{{ answer_3.1 }}' class="btn btn-success btn-large">{{ answer_3.0 }}</button>
-                        <button name="answer" value='{{ answer_4.1 }}' class="btn btn-success btn-large">{{ answer_4.0 }}</button>
+                        {% if answer_3.1 > 0 %}
+                            <button name="answer" value='{{ answer_3.1 }}' class="quiz-button quiz-button-true btn btn-outline-success">{{ answer_3.0 }}</button>
+                        {% else %}
+                            <button name="answer" value='{{ answer_3.1 }}' class="quiz-button quiz-button-false btn btn-outline-success">{{ answer_3.0 }}</button>
+                        {% endif %}
+                        {% if answer_4.1 > 0 %}
+                            <button name="answer" value='{{ answer_4.1 }}' class="quiz-button quiz-button-true btn btn-outline-success">{{ answer_4.0 }}</button>
+                        {% else %}
+                            <button name="answer" value='{{ answer_4.1 }}' class="quiz-button quiz-button-false btn btn-outline-success">{{ answer_4.0 }}</button>
+                        {% endif %}
                     </div>
-
-
                 </form>
             </div>
-
-
-
             <div class="col"></div>
         </div>
     </div>

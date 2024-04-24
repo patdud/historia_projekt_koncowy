@@ -5,23 +5,18 @@
 <form action="" method="post">
     {% csrf_token %}
     <div class="text-center center">
+        <p class="h1" style="color: #DCD7D9">Wybierz kategorię</p>
         <div>
-            <button type="submit" name="prehistory" class="category-button btn btn-success btn-large">Prehistoria</button>
+            <button type="submit" name="prehistory" class="category-button btn btn-outline-success">Prehistoria</button>
+            <button type="submit" name="antiquity" class="category-button btn btn-outline-success">Starożytność</button>
         </div>
         <div>
-            <button type="submit" name="antiquity" class="category-button btn btn-success btn-large">Starożytność</button>
+            <button type="submit" name="medieval" class="category-button btn btn-outline-success">Średniowiecze</button>
+            <button type="submit" name="modernity" class="category-button btn btn-outline-success">Nowożytność</button>
         </div>
         <div>
-            <button type="submit" name="medieval" class="category-button btn btn-success btn-large">Średniowiecze</button>
-        </div>
-        <div>
-            <button type="submit" name="modernity" class="category-button btn btn-success btn-large">Nowożytność</button>
-        </div>
-        <div>
-            <button type="submit" name="xxage" class="category-button btn btn-success btn-large">Epoka XIX wieku</button>
-        </div>
-        <div>
-            <button type="submit" name="contemporary" class="category-button btn btn-success btn-large">Współczesność</button>
+            <button type="submit" name="xxage" class="category-button btn btn-outline-success">Epoka XIX wieku</button>
+            <button type="submit" name="contemporary" class="category-button btn btn-outline-success">Współczesność</button>
         </div>
     </div>
 </form>
