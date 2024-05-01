@@ -28,7 +28,7 @@ from viewer.models import (Level,
                            User_category)
 
 from viewer.views import (LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView,
-                          SummaryView, to_main_site)
+                          to_main_site, SummaryView)
 
 admin.site.register(Level)
 admin.site.register(Category)
@@ -41,7 +41,7 @@ admin.site.register(Quiz_question)
 admin.site.register(User_category)
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin'),
+    path('admin/', admin.site.urls),
     path('accounts/login/', SubmittableLoginView.as_view(), name='login'),
     path('accounts/register/', SignUpView.as_view(), name='register'),
     path('accounts/logout/', CustomLogoutView.as_view(), name='logout'),
