@@ -77,8 +77,6 @@ class QuizView(View):
     def get(self, request):
         quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]['id']
         step = Quiz.objects.filter(user_id=request.user).values('quiz_step')[0]['quiz_step']
-        print(f'{step=}, {type(step)}')
-        print(f'{quiz=}, {type(quiz)}')
 
         if step == 5:
             return redirect(reverse('summary'))
@@ -87,11 +85,9 @@ class QuizView(View):
 
         set_of_questions = []
         for quiz_question in Quiz_question.objects.all():
-            print('a')
-            if quiz_question.quiz_id.id == str(quiz):
-                print('b')
+            if quiz_question.quiz_id.id == quiz:
                 set_of_questions.append(quiz_question.question_id)
-        print(f'{set_of_questions=}')
+
         answers = []
         for answer in Answer.objects.all():
             if answer.question_id.id == set_of_questions[step].id:
@@ -103,8 +99,8 @@ class QuizView(View):
                                'answer_2': answers[1], 'answer_3': answers[2], 'answer_4': answers[3]})
 
     def post(self, request, **kwargs):
-        quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]
-        step = Quiz.objects.filter(user_id=request.user).values('quiz_step')[0]['step']
+        quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]['id']
+        step = Quiz.objects.filter(user_id=request.user).values('quiz_step')[0]['quiz_step']
         session_id = request.session.session_key
 
         if request.POST.get('answer') is not None:
@@ -118,7 +114,7 @@ class QuizView(View):
 
                 Quiz.objects.filter(id=quiz).update(quiz_score=new_score)
 
-            return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
+            return redirect(reverse('quiz'))
         else:
             return redirect(reverse('index'))
 
