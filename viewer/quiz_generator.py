@@ -4,6 +4,7 @@ import random
 import time
 
 def quiz_generator(request, category, level):
+    Quiz.objects.filter(user_id=request.user).delete()
 
     new_quiz = Quiz(user_id=request.user, name=str(time.time()))
     new_quiz.save()
@@ -21,8 +22,6 @@ def quiz_generator(request, category, level):
             new_question = Quiz_question(quiz_id=new_quiz, question_id=chosen_question)
             new_question.save()
             prepared_quiz.append(chosen_question)
-
-    return str(quiz_id)
 
 
 def create_user_categorys(given_user):

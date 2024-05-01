@@ -55,30 +55,37 @@ class LevelView(LoginRequiredMixin, View):
         category = kwargs.get('category', None)
 
         if request.POST.get('beginner') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request, category, 1), '0']))
+            quiz_generator(request, category, 1)
+            return redirect(reverse('quiz'))
         elif request.POST.get('novice') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request, category, 2), '0']))
+            quiz_generator(request, category, 2)
+            return redirect(reverse('quiz'))
         elif request.POST.get('intermediate') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request, category, 3), '0']))
+            quiz_generator(request, category, 3)
+            return redirect(reverse('quiz'))
         elif request.POST.get('advanced') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request, category, 4), '0']))
+            quiz_generator(request, category, 4)
+            return redirect(reverse('quiz'))
         elif request.POST.get('master') is not None:
-            return redirect(reverse('quiz', args=[quiz_generator(request, category, 5), '0']))
+            quiz_generator(request, category, 5)
+            return redirect(reverse('quiz'))
         else:
             return redirect(reverse('index'))
 
 
 class QuizView(View):
-    def get(self, request, **kwargs):
-        quiz = kwargs.get('quiz', None)
-        step = int(kwargs.get('step', None))
+    def get(self, request):
+        quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]['id']
+        step = Quiz.objects.filter(user_id=request.user).values('quiz_step')[0]['quiz_step']
 
         if step == 5:
-            return redirect(reverse('summary', args = [quiz]))
+            return redirect(reverse('summary'))
+
+        Quiz.objects.filter(user_id=request.user).update(quiz_step=step+1)
 
         set_of_questions = []
         for quiz_question in Quiz_question.objects.all():
-            if quiz_question.quiz_id.id == int(quiz):
+            if quiz_question.quiz_id.id == quiz:
                 set_of_questions.append(quiz_question.question_id)
 
         answers = []
@@ -92,14 +99,14 @@ class QuizView(View):
                                'answer_2': answers[1], 'answer_3': answers[2], 'answer_4': answers[3]})
 
     def post(self, request, **kwargs):
-        quiz = kwargs.get('quiz', None)
-        step = int(kwargs.get('step', None))
+        quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]['id']
+        step = Quiz.objects.filter(user_id=request.user).values('quiz_step')[0]['quiz_step']
         session_id = request.session.session_key
 
         if request.POST.get('answer') is not None:
             if cache.get(f'action_{session_id}{quiz}{step}') is None:
 
-                cache.set(f'action_{session_id}{quiz}{step}',True, timeout=30)
+                cache.set(f'action_{session_id}{quiz}{step}', True, timeout=30)
                 self.choice_made = True
                 current_score = Quiz.objects.filter(id=quiz).values('quiz_score')[0]['quiz_score']
                 gained_points = int(request.POST.get('answer'))
@@ -107,29 +114,28 @@ class QuizView(View):
 
                 Quiz.objects.filter(id=quiz).update(quiz_score=new_score)
 
-            return redirect(reverse('quiz', args=[quiz, str(step + 1)]))
+            return redirect(reverse('quiz'))
         else:
             return redirect(reverse('index'))
 
 
 class SummaryView(View):
-    def get(self, request, **kwargs):
+    def get(self, request):
+        quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]['id']
         session_id = request.session.session_key
-        quiz = int(kwargs.get('quiz', None))
 
         score = Quiz.objects.filter(id=quiz).values('quiz_score')[0]['quiz_score']
         question_id = Quiz_question.objects.filter(quiz_id=quiz).values('question_id')[0]['question_id']
         category_id = Question.objects.filter(id=question_id).values('category_id')[0]['category_id']
-
         current_score = User_category.objects.filter(user_id=request.user, category_id=category_id).values('points')[0]['points']
         new_points = current_score + score
 
         if cache.get(f'action_{session_id}{quiz}') is None:
             cache.set(f'action_{session_id}{quiz}', True, timeout=30)
-
             User_category.objects.filter(user_id=request.user, category_id=category_id).update(points=new_points)
 
         return render(request, template_name='summary.html', context={'score': score})
+
 
 class SubmittableLoginView(LoginView):
     template_name = 'form.html'
