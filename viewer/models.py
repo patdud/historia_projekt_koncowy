@@ -48,7 +48,7 @@ class AnswerType(Model):
 
 
 class Answer(Model):
-    question_id = ForeignKey(Question, on_delete=DO_NOTHING)
+    question_id = ForeignKey(Question, on_delete=CASCADE)
     content = CharField(max_length=255)
     type_id = ForeignKey(AnswerType, on_delete=DO_NOTHING)
     flag = BooleanField(default=False)

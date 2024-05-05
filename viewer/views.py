@@ -29,7 +29,7 @@ class MainSiteView(View):
             return redirect(reverse('level', args=['3']))
         elif request.POST.get('modernity') is not None:
             return redirect(reverse('level', args=['4']))
-        elif request.POST.get('xxage') is not None:
+        elif request.POST.get('xixage') is not None:
             return redirect(reverse('level', args=['5']))
         elif request.POST.get('contemporary') is not None:
             return redirect(reverse('level', args=['6']))

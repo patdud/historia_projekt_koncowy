@@ -1,0 +1,2612 @@
+[
+  {
+    "model": "viewer.question",
+    "pk": 36,
+    "fields": {
+      "category_id": 6,
+      "contents": "Kto był pierwszym demokratycznie wybranym prezydentem Polski?",
+      "level": 2,
+      "score": 5
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 144,
+    "fields": {
+      "content": "Lech Wałęsa",
+      "flag": true,
+      "question_id": 36,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 145,
+    "fields": {
+      "content": "Jan Paweł II",
+      "flag": false,
+      "question_id": 36,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 146,
+    "fields": {
+      "content": "Lech Kaczyński",
+      "flag": false,
+      "question_id": 36,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 147,
+    "fields": {
+      "content": "Andrzej Duda",
+      "flag": false,
+      "question_id": 36,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 37,
+    "fields": {
+      "category_id": 6,
+      "contents": "Które z następujących państw NIE jest członkiem Unii Europejskiej?",
+      "level": 2,
+      "score": 15
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 148,
+    "fields": {
+      "content": "Norwegia",
+      "flag": true,
+      "question_id": 37,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 149,
+    "fields": {
+      "content": "Włochy",
+      "flag": false,
+      "question_id": 37,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 150,
+    "fields": {
+      "content": "Hiszpania",
+      "flag": false,
+      "question_id": 37,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 151,
+    "fields": {
+      "content": "Niemcy",
+      "flag": false,
+      "question_id": 37,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 38,
+    "fields": {
+      "category_id": 6,
+      "contents": "Które wydarzenie zainicjowało I wojnę światową?",
+      "level": 2,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 152,
+    "fields": {
+      "content": "Zamach na arcyksięcia Franciszka Ferdynanda",
+      "flag": true,
+      "question_id": 38,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 153,
+    "fields": {
+      "content": "Podpisanie Traktatu Wersalskiego",
+      "flag": false,
+      "question_id": 38,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 154,
+    "fields": {
+      "content": "Atak na Polskę",
+      "flag": false,
+      "question_id": 38,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 155,
+    "fields": {
+      "content": "Upadek Muru Berlińskiego",
+      "flag": false,
+      "question_id": 38,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 39,
+    "fields": {
+      "category_id": 6,
+      "contents": "Które państwo posiadało największe imperium kolonialne w historii?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 156,
+    "fields": {
+      "content": "Wielka Brytania",
+      "flag": true,
+      "question_id": 39,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 157,
+    "fields": {
+      "content": "Francja",
+      "flag": false,
+      "question_id": 39,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 158,
+    "fields": {
+      "content": "Portugalia",
+      "flag": false,
+      "question_id": 39,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 159,
+    "fields": {
+      "content": "Hiszpania",
+      "flag": false,
+      "question_id": 39,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 40,
+    "fields": {
+      "category_id": 6,
+      "contents": "Kto był pierwszym polskim laureatem Nagrody Nobla w dziedzinie literatury?",
+      "level": 2,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 160,
+    "fields": {
+      "content": "Henryk Sienkiewicz",
+      "flag": true,
+      "question_id": 40,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 161,
+    "fields": {
+      "content": "Władysław Reymont",
+      "flag": false,
+      "question_id": 40,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 162,
+    "fields": {
+      "content": "Czesław Miłosz",
+      "flag": false,
+      "question_id": 40,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 163,
+    "fields": {
+      "content": "Wisława Szymborska",
+      "flag": false,
+      "question_id": 40,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 41,
+    "fields": {
+      "category_id": 3,
+      "contents": "Kto był pierwszym królem Polski?",
+      "level": 2,
+      "score": 30
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 164,
+    "fields": {
+      "content": "Bolesław I Chrobry",
+      "flag": true,
+      "question_id": 41,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 165,
+    "fields": {
+      "content": "Mieszko I",
+      "flag": false,
+      "question_id": 41,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 166,
+    "fields": {
+      "content": "Kazimierz Wielki",
+      "flag": false,
+      "question_id": 41,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 167,
+    "fields": {
+      "content": "Bolesław II Śmiały",
+      "flag": false,
+      "question_id": 41,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 44,
+    "fields": {
+      "category_id": 5,
+      "contents": "Który z polskich kompozytorów jest znany jako mistrz poloneza i mazurka?",
+      "level": 3,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 176,
+    "fields": {
+      "content": "Fryderyk Chopin",
+      "flag": true,
+      "question_id": 44,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 177,
+    "fields": {
+      "content": "Karol Szymanowski",
+      "flag": false,
+      "question_id": 44,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 178,
+    "fields": {
+      "content": "Stanisław Moniuszko",
+      "flag": false,
+      "question_id": 44,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 179,
+    "fields": {
+      "content": "Witold Lutosławski",
+      "flag": false,
+      "question_id": 44,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 46,
+    "fields": {
+      "category_id": 6,
+      "contents": "Które z poniższych wydarzeń miało miejsce w roku 1989?",
+      "level": 2,
+      "score": 15
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 184,
+    "fields": {
+      "content": "Upadek komunizmu w Polsce",
+      "flag": true,
+      "question_id": 46,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 185,
+    "fields": {
+      "content": "Podpisanie Traktatu z Maastricht",
+      "flag": false,
+      "question_id": 46,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 186,
+    "fields": {
+      "content": "Zakończenie II wojny światowej",
+      "flag": false,
+      "question_id": 46,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 187,
+    "fields": {
+      "content": "Pierwszy lot człowieka w kosmos",
+      "flag": false,
+      "question_id": 46,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 47,
+    "fields": {
+      "category_id": 6,
+      "contents": "Który z poniższych wynalazków został opracowany przez polskiego wynalazcę?",
+      "level": 3,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 188,
+    "fields": {
+      "content": "Kamera filmowa",
+      "flag": true,
+      "question_id": 47,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 189,
+    "fields": {
+      "content": "Telefon komórkowy",
+      "flag": false,
+      "question_id": 47,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 190,
+    "fields": {
+      "content": "Samochód elektryczny",
+      "flag": false,
+      "question_id": 47,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 191,
+    "fields": {
+      "content": "Lek przeciwbólowy aspiryna",
+      "flag": false,
+      "question_id": 47,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 49,
+    "fields": {
+      "category_id": 3,
+      "contents": "Kto był pierwszym królem Polski koronowanym w katedrze w Gnieźnie?",
+      "level": 2,
+      "score": 30
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 196,
+    "fields": {
+      "content": "Bolesław I Chrobry",
+      "flag": true,
+      "question_id": 49,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 197,
+    "fields": {
+      "content": "Mieszko I",
+      "flag": false,
+      "question_id": 49,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 198,
+    "fields": {
+      "content": "Kazimierz Odnowiciel",
+      "flag": false,
+      "question_id": 49,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 199,
+    "fields": {
+      "content": "Bolesław II Śmiały",
+      "flag": false,
+      "question_id": 49,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 50,
+    "fields": {
+      "category_id": 6,
+      "contents": "W którym roku rozpoczęła się II wojna światowa?",
+      "level": 2,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 200,
+    "fields": {
+      "content": "1939",
+      "flag": true,
+      "question_id": 50,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 201,
+    "fields": {
+      "content": "1941",
+      "flag": false,
+      "question_id": 50,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 202,
+    "fields": {
+      "content": "1945",
+      "flag": false,
+      "question_id": 50,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 203,
+    "fields": {
+      "content": "1940",
+      "flag": false,
+      "question_id": 50,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 51,
+    "fields": {
+      "category_id": 4,
+      "contents": "Który z poniższych historycznych wydarzeń miał miejsce najpierw?",
+      "level": 4,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 204,
+    "fields": {
+      "content": "Odkrycie Ameryki przez Krzysztofa Kolumba",
+      "flag": false,
+      "question_id": 51,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 205,
+    "fields": {
+      "content": "Wybuch rewolucji francuskiej",
+      "flag": false,
+      "question_id": 51,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 206,
+    "fields": {
+      "content": "Odkrycie przylądka dobrej nadziei przez Bartłomieja Diasa",
+      "flag": true,
+      "question_id": 51,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 207,
+    "fields": {
+      "content": "Założenie pierwszej stałej osady na terenie obecnego USA",
+      "flag": false,
+      "question_id": 51,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 52,
+    "fields": {
+      "category_id": 4,
+      "contents": "Które z poniższych wydarzeń miało miejsce jako pierwsze?",
+      "level": 2,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 208,
+    "fields": {
+      "content": "Zdobycie Konstantynopola przez Turków osmańskich",
+      "flag": true,
+      "question_id": 52,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 209,
+    "fields": {
+      "content": "Bitwa pod Grunwaldem",
+      "flag": false,
+      "question_id": 52,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 210,
+    "fields": {
+      "content": "Bitwa pod Wiedniem",
+      "flag": false,
+      "question_id": 52,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 211,
+    "fields": {
+      "content": "Podpisanie pokoju westfalskiego",
+      "flag": false,
+      "question_id": 52,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 53,
+    "fields": {
+      "category_id": 6,
+      "contents": "Które z poniższych państw istniało najdłużej?",
+      "level": 3,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 212,
+    "fields": {
+      "content": "Cesarstwo Rzymskie",
+      "flag": false,
+      "question_id": 53,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 213,
+    "fields": {
+      "content": "Cesarstwo Bizantyjskie",
+      "flag": true,
+      "question_id": 53,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 214,
+    "fields": {
+      "content": "Cesarstwo Niemieckie",
+      "flag": false,
+      "question_id": 53,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 215,
+    "fields": {
+      "content": "Imperium Osmańskie",
+      "flag": false,
+      "question_id": 53,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 54,
+    "fields": {
+      "category_id": 2,
+      "contents": "Kto był ostatnim cesarzem Rzymu?",
+      "level": 4,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 216,
+    "fields": {
+      "content": "Romulus Augustulus",
+      "flag": true,
+      "question_id": 54,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 217,
+    "fields": {
+      "content": "Juliusz Cezar",
+      "flag": false,
+      "question_id": 54,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 218,
+    "fields": {
+      "content": "Konstantyn Wielki",
+      "flag": false,
+      "question_id": 54,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 219,
+    "fields": {
+      "content": "Augustus",
+      "flag": false,
+      "question_id": 54,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 55,
+    "fields": {
+      "category_id": 3,
+      "contents": "Który z poniższych królów Polski był synem Jadwigi Andegaweńskiej i Władysława Jagiełły?",
+      "level": 3,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 220,
+    "fields": {
+      "content": "Władysław III Warneńczyk",
+      "flag": true,
+      "question_id": 55,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 221,
+    "fields": {
+      "content": "Kazimierz IV Jagiellończyk",
+      "flag": false,
+      "question_id": 55,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 222,
+    "fields": {
+      "content": "Zygmunt I Stary",
+      "flag": false,
+      "question_id": 55,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 223,
+    "fields": {
+      "content": "Jan I Olbracht",
+      "flag": false,
+      "question_id": 55,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 56,
+    "fields": {
+      "category_id": 4,
+      "contents": "Kto był pierwszym królem Polski wybranym w wyniku elekcji?",
+      "level": 3,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 224,
+    "fields": {
+      "content": "Henryk III Walezy",
+      "flag": true,
+      "question_id": 56,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 225,
+    "fields": {
+      "content": "Stefan Batory",
+      "flag": false,
+      "question_id": 56,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 226,
+    "fields": {
+      "content": "Zygmunt III Waza",
+      "flag": false,
+      "question_id": 56,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 227,
+    "fields": {
+      "content": "Władysław IV Waza",
+      "flag": false,
+      "question_id": 56,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 57,
+    "fields": {
+      "category_id": 3,
+      "contents": "W którym roku odbyła się bitwa pod Grunwaldem?",
+      "level": 2,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 228,
+    "fields": {
+      "content": "1410",
+      "flag": true,
+      "question_id": 57,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 229,
+    "fields": {
+      "content": "1431",
+      "flag": false,
+      "question_id": 57,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 230,
+    "fields": {
+      "content": "1385",
+      "flag": false,
+      "question_id": 57,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 231,
+    "fields": {
+      "content": "1453",
+      "flag": false,
+      "question_id": 57,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 58,
+    "fields": {
+      "category_id": 3,
+      "contents": "Kto był pierwszym władcą Polski z dynastii Piastów?",
+      "level": 2,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 232,
+    "fields": {
+      "content": "Mieszko I",
+      "flag": true,
+      "question_id": 58,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 233,
+    "fields": {
+      "content": "Bolesław Chrobry",
+      "flag": false,
+      "question_id": 58,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 234,
+    "fields": {
+      "content": "Bolesław Śmiały",
+      "flag": false,
+      "question_id": 58,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 235,
+    "fields": {
+      "content": "Bolesław Krzywousty",
+      "flag": false,
+      "question_id": 58,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 59,
+    "fields": {
+      "category_id": 4,
+      "contents": "Kto był królem Polski podczas obrony Wiednia przed Turkami w 1683 roku?",
+      "level": 2,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 236,
+    "fields": {
+      "content": "Jan III Sobieski",
+      "flag": true,
+      "question_id": 59,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 237,
+    "fields": {
+      "content": "August II Mocny",
+      "flag": false,
+      "question_id": 59,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 238,
+    "fields": {
+      "content": "Stefan Czarniecki",
+      "flag": false,
+      "question_id": 59,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 239,
+    "fields": {
+      "content": "Jan Kazimierz",
+      "flag": false,
+      "question_id": 59,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 60,
+    "fields": {
+      "category_id": 3,
+      "contents": "Który z poniższych polskich królów nosił przydomek 'Król Chłopski'?",
+      "level": 4,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 240,
+    "fields": {
+      "content": "Władysław Jagiełło",
+      "flag": true,
+      "question_id": 60,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 241,
+    "fields": {
+      "content": "Stefan Batory",
+      "flag": false,
+      "question_id": 60,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 242,
+    "fields": {
+      "content": "Kazimierz Wielki",
+      "flag": false,
+      "question_id": 60,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 243,
+    "fields": {
+      "content": "August II Mocny",
+      "flag": false,
+      "question_id": 60,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 61,
+    "fields": {
+      "category_id": 6,
+      "contents": "Która z bitew była klęską Polski podczas wojny polsko-bolszewickiej?",
+      "level": 4,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 244,
+    "fields": {
+      "content": "Bitwa nad Niemnem",
+      "flag": true,
+      "question_id": 61,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 245,
+    "fields": {
+      "content": "Bitwa warszawska",
+      "flag": false,
+      "question_id": 61,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 246,
+    "fields": {
+      "content": "Bitwa pod Komarowem",
+      "flag": false,
+      "question_id": 61,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 247,
+    "fields": {
+      "content": "Bitwa o Lwów",
+      "flag": false,
+      "question_id": 61,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 62,
+    "fields": {
+      "category_id": 4,
+      "contents": "Który polski władca prowadził unifikację prawno-administracyjną w XV wieku?",
+      "level": 4,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 248,
+    "fields": {
+      "content": "Kazimierz Jagiellończyk",
+      "flag": true,
+      "question_id": 62,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 249,
+    "fields": {
+      "content": "Bolesław Krzywousty",
+      "flag": false,
+      "question_id": 62,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 250,
+    "fields": {
+      "content": "Władysław Łokietek",
+      "flag": false,
+      "question_id": 62,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 251,
+    "fields": {
+      "content": "Zygmunt I Stary",
+      "flag": false,
+      "question_id": 62,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 63,
+    "fields": {
+      "category_id": 4,
+      "contents": "W którym roku odbyła się bitwa pod Kircholmem, gdzie polskie wojska pokonały Szwedów?",
+      "level": 4,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 252,
+    "fields": {
+      "content": "1605",
+      "flag": true,
+      "question_id": 63,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 253,
+    "fields": {
+      "content": "1656",
+      "flag": false,
+      "question_id": 63,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 254,
+    "fields": {
+      "content": "1709",
+      "flag": false,
+      "question_id": 63,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 255,
+    "fields": {
+      "content": "1610",
+      "flag": false,
+      "question_id": 63,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 64,
+    "fields": {
+      "category_id": 3,
+      "contents": "Kto był pierwszym królem Polski koronowanym w katedrze w Gnieźnie?",
+      "level": 2,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 256,
+    "fields": {
+      "content": "Bolesław I Chrobry",
+      "flag": true,
+      "question_id": 64,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 257,
+    "fields": {
+      "content": "Mieszko I",
+      "flag": false,
+      "question_id": 64,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 258,
+    "fields": {
+      "content": "Kazimierz Odnowiciel",
+      "flag": false,
+      "question_id": 64,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 259,
+    "fields": {
+      "content": "Bolesław II Śmiały",
+      "flag": false,
+      "question_id": 64,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 65,
+    "fields": {
+      "category_id": 3,
+      "contents": "W którym roku Polska przyjęła chrześcijaństwo?",
+      "level": 2,
+      "score": 25
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 260,
+    "fields": {
+      "content": "966",
+      "flag": true,
+      "question_id": 65,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 261,
+    "fields": {
+      "content": "1000",
+      "flag": false,
+      "question_id": 65,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 262,
+    "fields": {
+      "content": "1054",
+      "flag": false,
+      "question_id": 65,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 263,
+    "fields": {
+      "content": "1025",
+      "flag": false,
+      "question_id": 65,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 66,
+    "fields": {
+      "category_id": 4,
+      "contents": "Który polski król został koronowany na króla Szwecji?",
+      "level": 5,
+      "score": 20
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 264,
+    "fields": {
+      "content": "Jan III Sobieski",
+      "flag": true,
+      "question_id": 66,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 265,
+    "fields": {
+      "content": "Stefan Batory",
+      "flag": false,
+      "question_id": 66,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 266,
+    "fields": {
+      "content": "Zygmunt III Waza",
+      "flag": false,
+      "question_id": 66,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 267,
+    "fields": {
+      "content": "Władysław IV Waza",
+      "flag": false,
+      "question_id": 66,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 70,
+    "fields": {
+      "category_id": 4,
+      "contents": "Który z polskich królów był nazywany 'Królem Peasants'?",
+      "level": 5,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 280,
+    "fields": {
+      "content": "Władysław II Jagiełło",
+      "flag": true,
+      "question_id": 70,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 281,
+    "fields": {
+      "content": "Kazimierz IV Jagiellończyk",
+      "flag": false,
+      "question_id": 70,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 282,
+    "fields": {
+      "content": "Zygmunt I Stary",
+      "flag": false,
+      "question_id": 70,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 283,
+    "fields": {
+      "content": "Stefan Batory",
+      "flag": false,
+      "question_id": 70,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 71,
+    "fields": {
+      "category_id": 5,
+      "contents": "Kto był pierwszym władcą zjednoczonych Włoch?",
+      "level": 5,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 284,
+    "fields": {
+      "content": "Wiktor Emanuel II",
+      "flag": true,
+      "question_id": 71,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 285,
+    "fields": {
+      "content": "Giuseppe Garibaldi",
+      "flag": false,
+      "question_id": 71,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 286,
+    "fields": {
+      "content": "Camillo Benso di Cavour",
+      "flag": false,
+      "question_id": 71,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 287,
+    "fields": {
+      "content": "Napoleon Bonaparte",
+      "flag": false,
+      "question_id": 71,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 72,
+    "fields": {
+      "category_id": 2,
+      "contents": "Kto był pierwszym cesarzem rzymskim?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 288,
+    "fields": {
+      "content": "Oktawian August",
+      "flag": true,
+      "question_id": 72,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 289,
+    "fields": {
+      "content": "Juliusz Cezar",
+      "flag": false,
+      "question_id": 72,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 290,
+    "fields": {
+      "content": "Tiberius",
+      "flag": false,
+      "question_id": 72,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 291,
+    "fields": {
+      "content": "Neron",
+      "flag": false,
+      "question_id": 72,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 73,
+    "fields": {
+      "category_id": 2,
+      "contents": "Kto był pierwszym faraonem starożytnego Egiptu?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 292,
+    "fields": {
+      "content": "Narmer (Menes)",
+      "flag": true,
+      "question_id": 73,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 293,
+    "fields": {
+      "content": "Tutenchamon",
+      "flag": false,
+      "question_id": 73,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 294,
+    "fields": {
+      "content": "Chufu (Cheops)",
+      "flag": false,
+      "question_id": 73,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 295,
+    "fields": {
+      "content": "Ramses II",
+      "flag": false,
+      "question_id": 73,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 74,
+    "fields": {
+      "category_id": 2,
+      "contents": "Który z cesarzy rzymskich był znany jako 'Filozof-Cesarz'?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 296,
+    "fields": {
+      "content": "Mark Aureliusz",
+      "flag": true,
+      "question_id": 74,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 297,
+    "fields": {
+      "content": "Trajan",
+      "flag": false,
+      "question_id": 74,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 298,
+    "fields": {
+      "content": "Hadrian",
+      "flag": false,
+      "question_id": 74,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 299,
+    "fields": {
+      "content": "Neron",
+      "flag": false,
+      "question_id": 74,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 75,
+    "fields": {
+      "category_id": 4,
+      "contents": "Który z poniższych polskich królów był nazywany 'Królem Słońce'?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 300,
+    "fields": {
+      "content": "Jan III Sobieski",
+      "flag": true,
+      "question_id": 75,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 301,
+    "fields": {
+      "content": "Zygmunt III Waza",
+      "flag": false,
+      "question_id": 75,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 302,
+    "fields": {
+      "content": "Władysław IV Waza",
+      "flag": false,
+      "question_id": 75,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 303,
+    "fields": {
+      "content": "August II Mocny",
+      "flag": false,
+      "question_id": 75,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 76,
+    "fields": {
+      "category_id": 3,
+      "contents": "W którym roku miała miejsce bitwa pod Poitiers, gdzie Karol Martel powstrzymał arabskie inwazje na Europę?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 304,
+    "fields": {
+      "content": "732",
+      "flag": true,
+      "question_id": 76,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 305,
+    "fields": {
+      "content": "711",
+      "flag": false,
+      "question_id": 76,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 306,
+    "fields": {
+      "content": "751",
+      "flag": false,
+      "question_id": 76,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 307,
+    "fields": {
+      "content": "756",
+      "flag": false,
+      "question_id": 76,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 77,
+    "fields": {
+      "category_id": 3,
+      "contents": "Kto był ostatnim władcą z dynastii Piastów?",
+      "level": 2,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 308,
+    "fields": {
+      "content": "Kazimierz III Wielki",
+      "flag": true,
+      "question_id": 77,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 309,
+    "fields": {
+      "content": "Władysław I Łokietek",
+      "flag": false,
+      "question_id": 77,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 310,
+    "fields": {
+      "content": "Bolesław II Śmiały",
+      "flag": false,
+      "question_id": 77,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 311,
+    "fields": {
+      "content": "Bolesław III Krzywousty",
+      "flag": false,
+      "question_id": 77,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 78,
+    "fields": {
+      "category_id": 3,
+      "contents": "Kto był władcą Francji podczas Wojny Stuletniej?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 312,
+    "fields": {
+      "content": "Karol VI",
+      "flag": true,
+      "question_id": 78,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 313,
+    "fields": {
+      "content": "Ludwik XI",
+      "flag": false,
+      "question_id": 78,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 314,
+    "fields": {
+      "content": "Franciszek I",
+      "flag": false,
+      "question_id": 78,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 315,
+    "fields": {
+      "content": "Karol VII",
+      "flag": false,
+      "question_id": 78,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 79,
+    "fields": {
+      "category_id": 4,
+      "contents": "Kto był założycielem dynastii Tudorów w Anglii?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 316,
+    "fields": {
+      "content": "Henryk VII",
+      "flag": true,
+      "question_id": 79,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 317,
+    "fields": {
+      "content": "Edward IV",
+      "flag": false,
+      "question_id": 79,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 318,
+    "fields": {
+      "content": "Ryszard III",
+      "flag": false,
+      "question_id": 79,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 319,
+    "fields": {
+      "content": "Henryk VIII",
+      "flag": false,
+      "question_id": 79,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 80,
+    "fields": {
+      "category_id": 4,
+      "contents": "Kto był architektem Watykanu w czasie renesansu?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 320,
+    "fields": {
+      "content": "Donato Bramante",
+      "flag": true,
+      "question_id": 80,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 321,
+    "fields": {
+      "content": "Leon Battista Alberti",
+      "flag": false,
+      "question_id": 80,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 322,
+    "fields": {
+      "content": "Filippo Brunelleschi",
+      "flag": false,
+      "question_id": 80,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 323,
+    "fields": {
+      "content": "Michelangelo",
+      "flag": false,
+      "question_id": 80,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 81,
+    "fields": {
+      "category_id": 2,
+      "contents": "Który z poniższych władców był cesarzem Rzymu podczas I wojny punickiej?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 324,
+    "fields": {
+      "content": "Hannibal",
+      "flag": false,
+      "question_id": 81,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 325,
+    "fields": {
+      "content": "Scypion Afrykański",
+      "flag": false,
+      "question_id": 81,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 326,
+    "fields": {
+      "content": "Pyrrus",
+      "flag": false,
+      "question_id": 81,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 327,
+    "fields": {
+      "content": "Hamilkar Barkas",
+      "flag": true,
+      "question_id": 81,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 82,
+    "fields": {
+      "category_id": 1,
+      "contents": "Co było najwcześniejszą znaną formą ludzkiego narzędzia?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 328,
+    "fields": {
+      "content": "Kamyki łupane",
+      "flag": true,
+      "question_id": 82,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 329,
+    "fields": {
+      "content": "Strzały",
+      "flag": false,
+      "question_id": 82,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 330,
+    "fields": {
+      "content": "Topory",
+      "flag": false,
+      "question_id": 82,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 331,
+    "fields": {
+      "content": "Koła",
+      "flag": false,
+      "question_id": 82,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 84,
+    "fields": {
+      "category_id": 1,
+      "contents": "Który z wymienionych okresów prehistorycznych jest najstarszy?",
+      "level": 4,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 336,
+    "fields": {
+      "content": "Paleolit",
+      "flag": true,
+      "question_id": 84,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 337,
+    "fields": {
+      "content": "Mezolit",
+      "flag": false,
+      "question_id": 84,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 338,
+    "fields": {
+      "content": "Neolit",
+      "flag": false,
+      "question_id": 84,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 339,
+    "fields": {
+      "content": "Epoka Kamienia",
+      "flag": false,
+      "question_id": 84,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 85,
+    "fields": {
+      "category_id": 1,
+      "contents": "Gdzie znaleziono najstarsze znane malowidła naskalne na świecie?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 340,
+    "fields": {
+      "content": "Jaskinia la Roche-Cotard w Francji",
+      "flag": true,
+      "question_id": 85,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 341,
+    "fields": {
+      "content": "Lascaux we Francji",
+      "flag": false,
+      "question_id": 85,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 342,
+    "fields": {
+      "content": "Altamira w Hiszpanii",
+      "flag": false,
+      "question_id": 85,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 343,
+    "fields": {
+      "content": "Jaskinia Kapova w Rosji",
+      "flag": false,
+      "question_id": 85,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 88,
+    "fields": {
+      "category_id": 2,
+      "contents": "W którym roku dokonano konfederacji etruskiej, tworząc państwo etruskie w Italii?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 352,
+    "fields": {
+      "content": "VIII wiek p.n.e.",
+      "flag": true,
+      "question_id": 88,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 353,
+    "fields": {
+      "content": "VI wiek p.n.e.",
+      "flag": false,
+      "question_id": 88,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 354,
+    "fields": {
+      "content": "VII wiek p.n.e.",
+      "flag": false,
+      "question_id": 88,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 355,
+    "fields": {
+      "content": "IX wiek p.n.e.",
+      "flag": false,
+      "question_id": 88,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 89,
+    "fields": {
+      "category_id": 2,
+      "contents": "Który z cesarzy rzymskich przyjął chrzest w 312 roku, co zapoczątkowało chrystianizację Cesarstwa Rzymskiego?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 90,
+    "fields": {
+      "category_id": 1,
+      "contents": "Które z poniższych miejsc jest jednym z najstarszych znanych stanowisk archeologicznych na świecie?",
+      "level": 5,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 360,
+    "fields": {
+      "content": "Çatalhöyük w Anatolii",
+      "flag": true,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 361,
+    "fields": {
+      "content": "Stonehenge w Anglii",
+      "flag": false,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 362,
+    "fields": {
+      "content": "Lascaux we Francji",
+      "flag": false,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 363,
+    "fields": {
+      "content": "Cueva de las Manos w Argentynie",
+      "flag": false,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 91,
+    "fields": {
+      "category_id": 1,
+      "contents": "Które z poniższych narzędzi zostało wykorzystane w okresie mezolitu?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 364,
+    "fields": {
+      "content": "Łuk i strzały",
+      "flag": false,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 365,
+    "fields": {
+      "content": "Topór",
+      "flag": false,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 366,
+    "fields": {
+      "content": "Harpun",
+      "flag": true,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 367,
+    "fields": {
+      "content": "Nóż krzemieniowy",
+      "flag": false,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 93,
+    "fields": {
+      "category_id": 1,
+      "contents": "Jakie są znaki czasu podziału epok prehistorycznych?",
+      "level": 4,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 372,
+    "fields": {
+      "content": "Znalezienie narzędzi krzemieniowych",
+      "flag": false,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 373,
+    "fields": {
+      "content": "Opanowanie techniki produkcji ceramiki",
+      "flag": false,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 374,
+    "fields": {
+      "content": "Odkrycie koła",
+      "flag": false,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 375,
+    "fields": {
+      "content": "Opanowanie rolnictwa i hodowli zwierząt",
+      "flag": true,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 90,
+    "fields": {
+      "category_id": 1,
+      "contents": "Które z poniższych miejsc jest znane jako jedno z najstarszych miejsc osadnictwa ludzkiego na świecie?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 360,
+    "fields": {
+      "content": "Jaskinia Blombos w Południowej Afryce",
+      "flag": true,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 361,
+    "fields": {
+      "content": "Jaskinia Lascaux we Francji",
+      "flag": false,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 362,
+    "fields": {
+      "content": "Jaskinia Altamira w Hiszpanii",
+      "flag": false,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 363,
+    "fields": {
+      "content": "Jaskinia Chauvet w Francji",
+      "flag": false,
+      "question_id": 90,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 91,
+    "fields": {
+      "category_id": 1,
+      "contents": "Jak nazywała się epoka prehistoryczna, podczas której ludzie zaczęli używać narzędzi i broni z kości i rogu?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 364,
+    "fields": {
+      "content": "Epoka Mezolitu",
+      "flag": true,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 365,
+    "fields": {
+      "content": "Epoka Paleolitu",
+      "flag": false,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 366,
+    "fields": {
+      "content": "Epoka Neolitu",
+      "flag": false,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 367,
+    "fields": {
+      "content": "Epoka Epoki Kamienna",
+      "flag": false,
+      "question_id": 91,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 93,
+    "fields": {
+      "category_id": 1,
+      "contents": "Które z poniższych wydarzeń miało najprawdopodobniej największy wpływ na gospodarkę neolitycznych społeczności?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 372,
+    "fields": {
+      "content": "Odkrycie rolnictwa",
+      "flag": true,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 373,
+    "fields": {
+      "content": "Odkrycie metalurgii",
+      "flag": false,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 374,
+    "fields": {
+      "content": "Odkrycie koła",
+      "flag": false,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 375,
+    "fields": {
+      "content": "Odkrycie pisemnego języka",
+      "flag": false,
+      "question_id": 93,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 94,
+    "fields": {
+      "category_id": 2,
+      "contents": "Które z miast starożytnego Egiptu było stolicą w czasach Nowego Państwa?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 376,
+    "fields": {
+      "content": "Teby",
+      "flag": true,
+      "question_id": 94,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 377,
+    "fields": {
+      "content": "Memfis",
+      "flag": false,
+      "question_id": 94,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 378,
+    "fields": {
+      "content": "Karnak",
+      "flag": false,
+      "question_id": 94,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 379,
+    "fields": {
+      "content": "Abu Simbel",
+      "flag": false,
+      "question_id": 94,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 95,
+    "fields": {
+      "category_id": 2,
+      "contents": "Jakie królestwo było jednym z najpotężniejszych na Bliskim Wschodzie przed podbojem Asyryjczyków w VIII wieku p.n.e.?",
+      "level": 4,
+      "score": 50
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 380,
+    "fields": {
+      "content": "Królestwo Izraela",
+      "flag": true,
+      "question_id": 95,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 381,
+    "fields": {
+      "content": "Królestwo Judy",
+      "flag": false,
+      "question_id": 95,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 382,
+    "fields": {
+      "content": "Królestwo Babilonu",
+      "flag": false,
+      "question_id": 95,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 383,
+    "fields": {
+      "content": "Królestwo Persji",
+      "flag": false,
+      "question_id": 95,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.question",
+    "pk": 96,
+    "fields": {
+      "category_id": 2,
+      "contents": "Kto był pierwszym faraonem starożytnego Egiptu?",
+      "level": 5,
+      "score": 100
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 384,
+    "fields": {
+      "content": "Narmer",
+      "flag": true,
+      "question_id": 96,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 385,
+    "fields": {
+      "content": "Amenhotep I",
+      "flag": false,
+      "question_id": 96,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 386,
+    "fields": {
+      "content": "Sneferu",
+      "flag": false,
+      "question_id": 96,
+      "type_id": 4
+    }
+  },
+  {
+    "model": "viewer.answer",
+    "pk": 387,
+    "fields": {
+      "content": "Tutenchamon",
+      "flag": false,
+      "question_id": 96,
+      "type_id": 4
+    }
+  }
+]
