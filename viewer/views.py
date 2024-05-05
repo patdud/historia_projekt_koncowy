@@ -23,7 +23,7 @@ class MainSiteView(View):
     def post(self, request):
         if request.POST.get('prehistory') is not None:
             return redirect(reverse('level', args=['1']))
-        elif request.POST.get('antiquity') is not None:
+        elif request.POST.get('ancient') is not None:
             return redirect(reverse('level', args=['2']))
         elif request.POST.get('medieval') is not None:
             return redirect(reverse('level', args=['3']))
