@@ -98,21 +98,16 @@ class QuizView(View):
                       context={'jestemSobieZmienna': 'zmienna niezmienna', 'question': set_of_questions[step].contents, 'answer_1': answers[0],
                                'answer_2': answers[1], 'answer_3': answers[2], 'answer_4': answers[3]})
 
-    def post(self, request, **kwargs):
+    def post(self, request):
         quiz = Quiz.objects.filter(user_id=request.user).values('id')[0]['id']
-        step = Quiz.objects.filter(user_id=request.user).values('quiz_step')[0]['quiz_step']
-        session_id = request.session.session_key
 
         if request.POST.get('answer') is not None:
-            if cache.get(f'action_{session_id}{quiz}{step}') is None:
+            self.choice_made = True
+            current_score = Quiz.objects.filter(id=quiz).values('quiz_score')[0]['quiz_score']
+            gained_points = int(request.POST.get('answer'))
+            new_score = current_score + gained_points
 
-                cache.set(f'action_{session_id}{quiz}{step}', True, timeout=30)
-                self.choice_made = True
-                current_score = Quiz.objects.filter(id=quiz).values('quiz_score')[0]['quiz_score']
-                gained_points = int(request.POST.get('answer'))
-                new_score = current_score + gained_points
-
-                Quiz.objects.filter(id=quiz).update(quiz_score=new_score)
+            Quiz.objects.filter(id=quiz).update(quiz_score=new_score)
 
             return redirect(reverse('quiz'))
         else:

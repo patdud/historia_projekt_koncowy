@@ -22,6 +22,9 @@ class Level(Model):
 class Category(Model):
     name = CharField(max_length=100, null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Article(Model):
     title = CharField(max_length=100, null=True)
@@ -37,7 +40,7 @@ class Question(Model):
     level = ForeignKey(Level, on_delete=DO_NOTHING)
 
     def __str__(self):
-        return f"{self.contents[0:30]}..."
+        return f"{self.category_id}, {self.contents[0:30]}..."
 
 
 class AnswerType(Model):
