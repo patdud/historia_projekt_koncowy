@@ -7,7 +7,7 @@ from django.core.cache import cache
 from django.urls import reverse_lazy, reverse
 
 from viewer.quiz_generator import quiz_generator
-from viewer.models import Question, Answer, Quiz, Quiz_question, User_category
+from viewer.models import Question, Answer, Quiz, Quiz_question, User_category, Category
 from viewer.forms import SignUpForm
 
 import random
@@ -43,13 +43,8 @@ class LevelView(LoginRequiredMixin, View):
         self.category = None
 
     def get(self, request, **kwargs):
-        category = kwargs.get('category', None)
-
-        if category in ['1', '2', '3', '4', '5', '6']:
-            return render(request, template_name='levels.html',
-                          context={})
-        else:
-            return redirect(reverse('index'))
+        return render(request, template_name='levels.html',
+                      context={})
 
     def post(self, request, **kwargs):
         category = kwargs.get('category', None)
