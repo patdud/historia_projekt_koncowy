@@ -4,17 +4,14 @@
 
 {% load static %}
 
-<form action="" method="post">
+<form method="post">
     {% csrf_token %}
     <div class="text-center center">
         <p class="h1" style="color: #DCD7D9">Wybierz kategorię</p>
         <div class="card-container">
-            <button style="background-image: url({% static 'img/prehistory.jpg' %})" class="card" type="submit" name="prehistory"></button>
-            <button style="background-image: url({% static 'img/ancient.jpg' %})" class="card" type="submit" name="ancient"></button>
-            <button style="background-image: url({% static 'img/medival.jpg' %})" class="card" type="submit" name="medieval"></button>
-            <button style="background-image: url({% static 'img/modernity.jpg' %})" class="card" type="submit" name="modernity"></button>
-            <button style="background-image: url({% static 'img/xixage.jpg' %})" class="card" type="submit" name="xixage"></button>
-            <button style="background-image: url({% static 'img/contemporary.jpg' %})" class="card" type="submit" name="contemporary"></button>
+             {% for value, label in form.fields.category.choices %}
+                <button style="background-image: url({% static 'img/'|add:label|add:'.jpg' %})" class="card" type="submit" name="category" value="{{ value }}"></button>
+             {% endfor %}
         </div>
     </div>
 </form>

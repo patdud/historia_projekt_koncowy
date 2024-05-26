@@ -8,31 +8,24 @@ from django.urls import reverse_lazy, reverse
 
 from viewer.quiz_generator import quiz_generator
 from viewer.models import Question, Answer, Quiz, Quiz_question, User_category, Category
-from viewer.forms import SignUpForm
+from viewer.forms import SignUpForm, CategoryForm
 
 import random
 
 
 class MainSiteView(View):
+    template_name = 'index.html'
+
     def get(self, request):
-        return render(
-            request, template_name='index.html',
-            context={}
-        )
+        form = CategoryForm()
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request):
-        if request.POST.get('prehistory') is not None:
-            return redirect(reverse('level', args=['1']))
-        elif request.POST.get('ancient') is not None:
-            return redirect(reverse('level', args=['2']))
-        elif request.POST.get('medieval') is not None:
-            return redirect(reverse('level', args=['3']))
-        elif request.POST.get('modernity') is not None:
-            return redirect(reverse('level', args=['4']))
-        elif request.POST.get('xixage') is not None:
-            return redirect(reverse('level', args=['5']))
-        elif request.POST.get('contemporary') is not None:
-            return redirect(reverse('level', args=['6']))
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            category = form.cleaned_data['category']
+            return redirect(reverse('level', args=[category]))
+        return render(request, self.template_name, {'form': form})
 
 
 class LevelView(LoginRequiredMixin, View):
