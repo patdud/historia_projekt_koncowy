@@ -7,8 +7,8 @@ from django.core.cache import cache
 from django.urls import reverse_lazy, reverse
 
 from viewer.quiz_generator import quiz_generator
-from viewer.models import Question, Answer, Quiz, Quiz_question, User_category, Category
-from viewer.forms import SignUpForm, CategoryForm
+from viewer.models import Question, Answer, Quiz, Quiz_question, User_category
+from viewer.forms import SignUpForm, CategoryForm, LevelForm
 
 import random
 
@@ -18,47 +18,32 @@ class MainSiteView(View):
 
     def get(self, request):
         form = CategoryForm()
-        return render(request, self.template_name, {'form': form})
+        return render(request, template_name=self.template_name, context={'form': form})
 
     def post(self, request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             category = form.cleaned_data['category']
             return redirect(reverse('level', args=[category]))
-        return render(request, self.template_name, {'form': form})
+        return render(request, template_name=self.template_name, context={'form': form})
 
 
 class LevelView(LoginRequiredMixin, View):
-    category = None
-
-    def __init__(self):
-        super().__init__()
-        self.category = None
+    template_name = 'levels.html'
 
     def get(self, request, **kwargs):
-        return render(request, template_name='levels.html',
-                      context={})
+        form = LevelForm
+        return render(request, template_name=self.template_name, context={'form': form})
 
     def post(self, request, **kwargs):
         category = kwargs.get('category', None)
 
-        if request.POST.get('beginner') is not None:
-            quiz_generator(request, category, 1)
+        form = LevelForm(request.POST)
+        if form.is_valid():
+            level = form.cleaned_data['level']
+            quiz_generator(request, category, level)
             return redirect(reverse('quiz'))
-        elif request.POST.get('novice') is not None:
-            quiz_generator(request, category, 2)
-            return redirect(reverse('quiz'))
-        elif request.POST.get('intermediate') is not None:
-            quiz_generator(request, category, 3)
-            return redirect(reverse('quiz'))
-        elif request.POST.get('advanced') is not None:
-            quiz_generator(request, category, 4)
-            return redirect(reverse('quiz'))
-        elif request.POST.get('master') is not None:
-            quiz_generator(request, category, 5)
-            return redirect(reverse('quiz'))
-        else:
-            return redirect(reverse('index'))
+        return render(request, template_name=self.template_name, context={'form': form})
 
 
 class QuizView(View):
