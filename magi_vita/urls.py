@@ -17,38 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from viewer.models import (Level,
-                           Category,
-                           Article,
-                           Question,
-                           AnswerType,
-                           Answer,
-                           Quiz,
-                           Quiz_question,
-                           User_category)
+from viewer import views
 
-from viewer.views import (LevelView, MainSiteView, QuizView, SubmittableLoginView, SignUpView, CustomLogoutView,
-                          to_main_site, SummaryView)
-
-admin.site.register(Level)
-admin.site.register(Category)
-admin.site.register(Article)
-admin.site.register(Question)
-admin.site.register(AnswerType)
-admin.site.register(Answer)
-admin.site.register(Quiz)
-admin.site.register(Quiz_question)
-admin.site.register(User_category)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/login/', SubmittableLoginView.as_view(), name='login'),
-    path('accounts/register/', SignUpView.as_view(), name='register'),
-    path('accounts/logout/', CustomLogoutView.as_view(), name='logout'),
-    path('accounts/profile/', to_main_site),
-    path('magivita/', MainSiteView.as_view(), name='index'),
-    path('', to_main_site),
-    path('magivita/category/<category>/', LevelView.as_view(), name='level'),
-    path('magivita/quiz/', QuizView.as_view(), name='quiz'),
-    path('magivita/summary/', SummaryView.as_view(), name='summary')
+    path('accounts/login/', views.SubmittableLoginView.as_view(), name='login'),
+    path('accounts/register/', views.SignUpView.as_view(), name='register'),
+    path('accounts/logout/', views.CustomLogoutView.as_view(), name='logout'),
+    path('accounts/profile/', views.to_main_site),
+    path('magivita/', views.MainSiteView.as_view(), name='index'),
+    path('', views.to_main_site),
+    path('magivita/category/<category>/', views.LevelView.as_view(), name='level'),
+    path('magivita/quiz/', views.QuizView.as_view(), name='quiz'),
+    path('magivita/summary/', views.SummaryView.as_view(), name='summary')
 ]

@@ -4,18 +4,12 @@
 
     <form action="" method="post">
         {% csrf_token %}
-        <div class="text-center center">
+        <div class="text-center center flex">
             <p class="h1" style="color: #DCD7D9">Wybierz poziom trudności</p>
             <div>
-                <button type="submit" name="beginner" class="category-button btn btn-outline-success">Bardzo łatwy</button>
-                <button type="submit" name="novice" class="category-button btn btn-outline-success">Łatwy</button>
-            </div>
-            <div>
-                <button type="submit" name="intermediate" class="category-button btn btn-outline-success">Średni</button>
-                <button type="submit" name="advanced" class="category-button btn btn-outline-success">Trudny</button>
-            </div>
-            <div>
-                <button type="submit" name="master" class="category-button btn btn-outline-success">Bardzo trudny</button>
+                {% for value, label in form.fields.level.choices %}
+                    <button type="submit" value="{{ value }}" name="level" class="category-button btn btn-outline-success">{{ label }}</button>
+                {% endfor %}
             </div>
         </div>
     </form>

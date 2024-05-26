@@ -2,17 +2,16 @@
 
 {% block content %}
 
-<form action="" method="post">
+{% load static %}
+
+<form method="post">
     {% csrf_token %}
     <div class="text-center center">
         <p class="h1" style="color: #DCD7D9">Wybierz kategorię</p>
         <div class="card-container">
-            <button style="background-image: url(https://o.quizlet.com/YWOY99-vQttCsm5jc42YNw.png)" class="card" type="submit" name="prehistory"></button>
-            <button style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Parthenon_from_west.jpg/220px-Parthenon_from_west.jpg)" class="card" type="submit" name="antiquity"></button>
-            <button style="background-image: url(https://knightstemplar.co/wp-content/uploads/2023/07/king_middle_ages.jpg)" class="card" type="submit" name="medieval"></button>
-            <button style="background-image: url(https://cdn.thecollector.com/wp-content/uploads/2023/06/christoper-columbus-arrives-in-america.jpg?width=1400&quality=55)" class="card" type="submit" name="modernity"></button>
-            <button style="background-image: url(https://i0.wp.com/historycolored.com/wp-content/uploads/2021/11/Napoleon-on-Horseback.jpg?resize=800%2C956&ssl=1)" class="card" type="submit" name="xxage"></button>
-            <button style="background-image: url(https://wszystkoconajwazniejsze.pl/wp-content/uploads/2022/06/shutterstock_760251307-1000x500.jpg)" class="card" type="submit" name="contemporary"></button>
+             {% for value, label in form.fields.category.choices %}
+                <button style="background-image: url({% static 'img/'|add:label|add:'.jpg' %})" class="card" type="submit" name="category" value="{{ value }}"></button>
+             {% endfor %}
         </div>
     </div>
 </form>
